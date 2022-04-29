@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="3.css" />
+	</head>
+	<body>
+		<div>
+			<div class="top">
+				我的订单
+			</div>
+			<div class="center">
+				<ul>
+					<li>全部<div class="on"></div>
+					</li>
+					<li>待付款<div class="on" style="display: none;"></div>
+					</li>
+					<li>待发货<div class="on" style="display: none;"></div>
+					</li>
+					<li>待收货<div class="on" style="display: none;"></div>
+					</li>
+					<li>已完成<div class="on" style="display: none;"></div>
+					</li>
+				</ul>
+			</div>
+			<div class="bottom">
+				<ul>
+					<li>
+						<div class="top1">
+							<span style="color: #999999;">订单编号：6029342543633</span>
+							<span style="color: #ff5e46;">已完成</span>
+						</div>
+						<div class="down">
+							<img src="../../img/首页/20.jpg">
+							<div class="xie">
+								<div class="a1">
+									<span style="color:#666666;">左右鞋店春夏爆款凉拖</span>
+									<span style="color:#a1a1a1;">×1</span>
+								</div>
+								<div class="jiage">
+									<div>
+										<p style="color:#999999;font-size: 0.22rem;">粉 35</p>
+										<p style="color: #ff5e46;font-size: 0.32rem;">￥149</p>
+									</div>
+									<span id="en">查看订单</span>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="top1">
+							<span style="color: #999999;">订单编号：6029342543633</span>
+							<span style="color: #ff5e46;">已完成</span>
+						</div>
+						<div class="down">
+							<img src="../../img/首页/20.jpg">
+							<div class="xie">
+								<div class="a1">
+									<span style="color:#666666;">左右鞋店春夏爆款凉拖</span>
+									<span style="color:#a1a1a1;">×1</span>
+								</div>
+								<div class="jiage">
+									<div>
+										<p style="color:#999999;font-size: 0.22rem;">粉 35</p>
+										<p style="color: #ff5e46;font-size: 0.32rem;">￥149</p>
+									</div>
+									<span id="en">查看订单</span>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="top1">
+							<span style="color: #999999;">订单编号：6029342543633</span>
+							<span style="color: #ff5e46;">已完成</span>
+						</div>
+						<div class="down">
+							<img src="../../img/首页/20.jpg">
+							<div class="xie">
+								<div class="a1">
+									<span style="color:#666666;">左右鞋店春夏爆款凉拖</span>
+									<span style="color:#a1a1a1;">×1</span>
+								</div>
+								<div class="jiage">
+									<div>
+										<p style="color:#999999;font-size: 0.22rem;">粉 35</p>
+										<p style="color: #ff5e46;font-size: 0.32rem;">￥149</p>
+									</div>
+									<span id="en">查看订单</span>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var box = document.getElementsByClassName("center")[0]
+			var lis = box.getElementsByTagName("li")
+			var on = document.getElementsByClassName("on")
+			console.log(lis)
+			console.log(on)
+			for (let i = 0; i < lis.length; i++) {
+				lis[i].onclick = function() {
+					for (var o = 0; o < lis.length; o++) {
+						on[o].style.display = "none"
+					}
+					on[i].style.display = "block"
+				}
+			}
+		</script>
+	</body>
+</html>

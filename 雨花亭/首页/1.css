@@ -1,0 +1,300 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 100px;
+}
+
+body {
+	font-size: 0.28rem;
+}
+
+.top {
+	background-color: #EEEEEE;
+	width: 7.5rem;
+	position: fixed;
+}
+
+.top_1 {
+	font-size: 0.34rem;
+	color: #333333;
+	height: 0.6rem;
+	width: 7.1rem;
+	margin: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.top_1 span {
+	width: 2.5rem;
+	text-align: center;
+	font-size: 0.34rem;
+}
+
+.top_2 {
+	width: 1.6rem;
+	height: 0.58rem;
+	border-radius: 0.4rem;
+	border: 0.01rem solid #333333;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.top_2 li:first-child,
+.top_2 li:last-child {
+	width: 0.07rem;
+	height: 0.07rem;
+	border-radius: 0.5rem;
+	background-color: #333333;
+}
+
+.top_2 li:nth-child(2) {
+	width: 0.12rem;
+	height: 0.12rem;
+	border-radius: 0.5rem;
+	background-color: #333333;
+}
+
+.top_2 ul {
+	width: 0.4rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.top_2 ul li {
+	list-style: none;
+}
+
+.xian {
+	height: 0.4rem;
+	width: 0.02rem;
+	background-color: #d0d0d0;
+}
+
+.yuan {
+	width: 0.24rem;
+	height: 0.24rem;
+	border-radius: 0.5rem;
+	border: 0.03rem solid #333333;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.xy {
+	width: 0.15rem;
+	height: 0.15rem;
+	border-radius: 0.5rem;
+	background-color: #333333;
+}
+
+.suo {
+	height: 1.2rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	position: relative;
+}
+
+.suo span {
+	position: absolute;
+	left: 0.4rem;
+	font-size: 0.25rem;
+	color: #9f9f9f;
+}
+
+.suo input {
+	height: 0.7rem;
+	width: 6.6rem;
+	border-radius: 0.5rem;
+	border: none;
+	outline: none;
+	padding-left: 0.5rem;
+	font-size: 0.26rem;
+}
+
+.center {
+	background-color: #EEEEEE;
+	width: 7.5rem;
+	/* font-size: 0.28rem; */
+	position: fixed;
+	top: 1.8rem;
+	bottom: 1rem;
+	overflow: scroll;
+}
+
+.da {
+	width: 7.5rem;
+	height: 3rem;
+}
+
+.da img {
+	width: 100%;
+	height: 100%;
+}
+
+.tupian ul {
+	width: 7.5rem;
+	height: 3.9rem;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-content: space-around;
+	justify-content: center;
+}
+
+.tupian ul li {
+	width: 1.4rem;
+	height: 1.6rem;
+	list-style: none;
+	font-size: 0.28rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.tupian ul li img {
+	height: 0.9rem;
+	width: 0.9rem;
+}
+
+.huodong {
+	width: 7.5rem;
+	height: 2rem;
+}
+
+.huodong img {
+	width: 100%;
+	height: 100%;
+}
+
+.quan {
+	width: 7.5rem;
+	height: 2.9rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.wenzi {
+	height: 0.65rem;
+	width: 7.5rem;
+	font-size: 0.36rem;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.wenzi p {
+	width: 7.1rem;
+	position: relative;
+	z-index: 1;
+}
+
+.wenzi p span {
+	width: 0.55rem;
+	height: 0.05rem;
+	border-radius: 0.5rem;
+	background-color: #e37198;
+	display: inline-block;
+	position: absolute;
+	bottom: 0.2rem;
+	left: 0.08rem;
+	z-index: -1;
+}
+
+.quan img {
+	width: 7.1rem;
+	height: 2.2rem;
+}
+
+.gouwu ul {
+	width: 7.5rem;
+	height: 10.5rem;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.gouwu ul li {
+	height: 5rem;
+	list-style: none;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border-bottom-right-radius: 0.5rem;
+}
+
+.gouwu ul li img {
+	width: 3.45rem;
+	height: 3.74rem;
+}
+
+.bottom_1 {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+	justify-content: space-between;
+}
+
+.jia {
+	height: 1.1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+#en {
+	width: 0.7rem;
+	height: 0.5rem;
+}
+
+#en span {
+	font-size: 0.3rem;
+	color: #e37198;
+}
+
+#enn {
+	width: 0.35rem;
+	height: 0.35rem;
+	border: 0.02rem solid #e37198;
+	border-radius: 0.5rem;
+}
+
+.bottom ul {
+	width: 7.5rem;
+	height: 1rem;
+	font-size: 0.22rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	position: fixed;
+	bottom: 0;
+	background-color: white;
+}
+
+.bottom ul li {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+@media screen and (max-width:375px) {
+	html {
+		font-size: 50px;
+	}
+}

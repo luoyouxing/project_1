@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="1-2.css" />
+		<link rel="stylesheet" href="font_awxvja4gxxt/iconfont.css">
+		<style type="text/css">
+			.iconfont {
+				font-size: 0.4rem;
+			}
+
+			.buttom {
+				position: fixed;
+				bottom: 0;
+				background-color: white;
+			}
+
+			.buttom ul {
+				margin-top: 0.1rem;
+				font-size: 0.25rem;
+				display: flex;
+				flex-direction: row;
+				flex-wrap: nowrap;
+				justify-content: space-evenly;
+				align-content: center;
+				width: 7.5rem;
+			}
+
+			.buttom ul li {
+				list-style: none;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			a {
+				text-decoration: none;
+				color: inherit;
+			}
+
+			.buttom ul li:hover {
+				color: #ff5e46;
+			}
+
+			.an {
+				color: #ff5e46;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<div class="top">
+				购物车
+			</div>
+			<div class="center">
+				<ul>
+					<li>
+						<input type="checkbox" class="check" />
+						<img src="../../img/首页/22.jpg">
+						<div class="top1">
+							<p>左右鞋店春夏爆款凉拖</p>
+							<div class="buttom1">
+								<div class="left">
+									<form>
+										<select name="selectList">
+											<option>粉 34</option>
+											<option>粉 35</option>
+											<option>粉 36</option>
+											<option>粉 37</option>
+											<option>粉 38</option>
+											<option>粉 39</option>
+											<option>粉 40</option>
+										</select>
+									</form>
+									<h2 class="jiage">￥149</h2>
+								</div>
+								<div class="right">
+									<button type="button" class="jian">-</button><input type="" value="1" readonly="readonly" class="inpt" /><button
+									 type="button" class="jia">+</button>
+								</div>
+							</div>
+						</div>
+						<div class="shanchu">
+							删除
+						</div>
+					</li>
+					<li>
+						<input type="checkbox" class="check" />
+						<img src="../../img/首页/22.jpg">
+						<div class="top1">
+							<p>左右鞋店春夏爆款凉拖</p>
+							<div class="buttom1">
+								<div class="left">
+									<form>
+										<select name="selectList">
+											<option>粉 34</option>
+											<option>粉 35</option>
+											<option>粉 36</option>
+											<option>粉 37</option>
+											<option>粉 38</option>
+											<option>粉 39</option>
+											<option>粉 40</option>
+										</select>
+									</form>
+									<h2 class="jiage">￥149</h2>
+								</div>
+								<div class="right">
+									<button type="button" class="jian">-</button><input type="" value="1" readonly="readonly" class="inpt" /><button
+									 type="button" class="jia">+</button>
+								</div>
+							</div>
+						</div>
+						<div class="shanchu">
+							删除
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="quanxuan">
+				<div class="all">
+					<span><input type="checkbox" onclick="xuanzhong()" /> 全选</span>
+					<span style="width: 3rem;">合计:<span style="color: #FF5E46;" class="heji">￥0</span></span>
+				</div>
+				<span style="width: 2rem;height: 0.9rem;text-align: center;background-color: #FF5E46;color: white;">去结算</span>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var jia = document.getElementsByClassName("jia") //加
+			var jian = document.getElementsByClassName("jian") //减
+			var checks = document.getElementsByClassName("check") //获取input中的复选框
+			var he = document.getElementsByClassName("heji")[0] //获取总价
+			var jiage = document.getElementsByClassName("jiage") //获取价格
+			var lis = document.getElementsByTagName("li")
+			var inp = document.getElementsByClassName("all")[0].getElementsByTagName("input")[0] //获取全选按钮
+			//数量
+			for (let i = 0; i < jia.length; i++) { //previousSibling：当前元素的上一个兄弟元素
+				jia[i].onclick = function() {
+					this.previousSibling.value++
+					all()
+				}
+				jian[i].onclick = function() {
+					if (this.nextSibling.value == 1) { //nextSibling：当前元素的下一个兄弟元素
+						this.nextSibling.value = 1
+					} else {
+						this.nextSibling.value--
+					}
+					all()
+				}
+			}
+			an()
+
+			//选中
+			function an() {
+				var checks = document.getElementsByClassName("check") //获取input中的复选框
+				var arr = []
+				for (var i = 0; i < checks.length; i++) {
+					arr.push(checks[i].checked) //把checked值存入数组
+				}
+				for (let i = 0; i < checks.length; i++) {
+					checks[i].onclick = function() { //判断check中checked的值
+						all()
+						arr[i] = checks[i].checked;
+						console.log(arr)
+						var bool = arr.some(function(v) { //遍历数组
+							return v == false
+						})
+						if (!bool) { //判断数组中的值
+							inp.checked = true;
+						} else {
+							inp.checked = false;
+						}
+					}
+				}
+				all()
+			}
+
+			//判断全选
+			function xuanzhong() {
+				if (inp.checked == true) {
+					for (let i = 0; i < checks.length; i++) {
+						checks[i].checked = true;
+					}
+					all()
+				} else {
+					for (let i = 0; i < checks.length; i++) {
+						checks[i].checked = false
+					}
+					all()
+				}
+			}
+
+			//鼠标拖拽
+			var first, last;
+			for (let i = 0; i < lis.length; i++) {
+				lis[i].ontouchstart = function() {
+					var f = event.changedTouches[0]//获取开始时鼠标位置
+					first = f.clientX
+				}
+				lis[i].ontouchend = function() {
+					var f = event.changedTouches[0]//获取结束时鼠标位置
+					last = f.clientX
+					if (Math.abs(first - last) > 50) {//判断鼠标移动距离触发
+						this.className = "on"
+						var del = this.getElementsByClassName("shanchu")[0]
+						del.ontouchstart = function() {
+							this.parentNode.remove()
+							var checks = document.getElementsByClassName("check") //获取input中的复选框
+							var arr = []
+							for (var i = 0; i < checks.length; i++) {
+								arr.push(checks[i].checked) //把checked值存入数组
+							}
+							var bool = arr.some(function(v) { //遍历数组
+								return v == false
+							})
+							if (!bool) { //判断数组中的值
+								if (arr.length != 0) {
+									inp.checked = true;
+								}else{
+									inp.checked = false;
+								}
+							} else {
+								inp.checked = false;
+							}
+							all()
+						}
+					} else {
+						this.className = ""
+					}
+					an()
+				}
+			}
+
+			function all() {
+				var sum = 0;
+				for (let i = 0; i < checks.length; i++) {
+					if (checks[i].checked == true) {
+						sum += jia[i].previousSibling.value * jiage[i].innerHTML.replace("￥", "")
+					}
+				}
+				he.innerHTML = "￥" + sum
+			}
+		</script>
+	</body>
+</html>

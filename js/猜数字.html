@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 判断一个数是否是3的倍数，5的倍数 ，3和5的倍数
+			// 判断一个数是否是小于0的，大于10的，0--10之间的
+			// var str=prompt("请输入一个数：") //带输入框的弹框，结果为字符串
+			// if(str%3==0&&str%5==0){
+			// 	console.log("3和5的倍数")
+			// }else if(str%3==0){
+			// 	console.log("3的倍数")
+			// }else if(str%5==0){
+			// 	console.log("5的倍数")
+			// }else{
+			// 	console.log("既不是3的倍数又不是5的倍数")
+			// }
+			// var s=prompt("请输入一个数：")
+			// if(s>10){
+			// 	console.log("大于10")
+			// }else if(s<10&&s>0){
+			// 	console.log("在0-10之间")
+			// }else if(s==0){
+			// 	console.log("等于0")
+			// }else if(s==10){
+			// 	console.log("等于10")
+			// }else{
+			// 	console.log("小于0")
+			// }
+			// if(s>=0&&s<=10){
+			// 	console.log("在0-10之间")
+			// }else if(s<0) {
+			// 	console.log("小于0")
+			// }
+			// else if(s==0){
+			// 	console.log("等于0")
+			// }else if(s==10){
+			// 	console.log("等于10")
+			// }
+			// 	console.log("大于10")
+			// }
+			var z = Math.round(Math.random() * 10)
+			// var x = Number(prompt("请输入一个数"))
+			var y
+			var x
+			function a() {
+				y = Number(prompt("猜0-10之间的数"));
+				while (y) {
+					if (y > z) {
+						y = Number(prompt("猜大了"))
+					} else if (y < z) {
+						y = Number(prompt("猜小了"))
+					} else {
+						break;
+					}
+				}
+				if (y) {
+					alert("猜对了")
+				} else {
+					alert("请输入数字")
+					a()
+				}
+			}
+			a()
+			// var z = Math.round(Math.random() * 100)
+			// var y = Number(prompt("猜1-100之间的数"))
+			// // function num(){
+			// // 	y = Number(prompt("猜1-100之间的数"));
+			// // }
+			// if (!isNaN(y)) {
+			// 	while (y != z) {
+			// 		if (y > z) {
+			// 			y = Number(prompt("猜大了"))
+			// 		} else if (y < z) {
+			// 			y = Number(prompt("猜小了"))
+			// 		}
+			// 	}
+			// 	alert("猜对了");
+			// }else{
+			// 	alert("请输入数字");
+			// 	// num();
+			// }
+		</script>
+	</body>
+</html>

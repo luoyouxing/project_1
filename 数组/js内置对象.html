@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//js对象：自定义对象、内置对象、浏览器对象
+			//Math对象 不是构造函数 不需要new调用 直接使用
+			console.log(Math.PI)
+			console.log(Math.max(1,99,3))
+			console.log(Math.max(1,99,'wm'))//NaN
+			console.log(Math.max())//-Infinity
+			//利用对象封装自己的数字对象
+			var Maths={
+				PI:3.141592653,
+				max:function(){
+					var max=arguments[0];
+					for(var i=1;i<arguments.length;i++){
+						if(arguments[i]>max){
+							max=arguments[i];
+						}
+					}
+					return max;
+				},
+				min:function(){
+					var min=arguments[0];
+					for(var i=1;i<arguments.length;i++){
+						if(arguments[i]<min){
+							min=arguments[i];
+						}
+					}
+					return min;
+				}
+			}
+			console.log(Maths.PI)
+			console.log(Maths.max(1,5,20))
+			console.log(Maths.min(1,5,20))
+			//绝对值
+			console.log(Math.abs(-1))
+			console.log(Math.abs('-1'))//隐式转换，会把字符串型-1 转换为数字型
+			console.log(Math.abs('pink'))//NaN
+			//2.三个取整方法
+			//(1)Math.floor() 向下取整 往最小了取值
+			console.log(Math.floor(1.1))//1
+			console.log(Math.floor(1.9))//1
+			//Math.ceil() 向上取整
+			console.log(Math.ceil(1.1))//2
+			console.log(Math.ceil(1.9))//2
+			//Math.round() 四舍五入
+			console.log(Math.ceil(-1.1))//-1
+			console.log(Math.ceil(-1.9))//-1
+			
+			//1.Math对象随机数方法 random()返回一个随机的小数 0=<x<1
+			//2.这个方法里面不跟参数
+			//3.代码验证
+			console.log(Math.random())
+			//4.得到两个数之间的随机整数 并且包含2个整数
+			//Math.floor(Math.random()*(max-min+1))+min;
+			function sum(min,max){
+				return Math.floor(Math.random()*(max-min+1))+min
+			}
+			console.log(sum(1,10))
+			//5.随机点名
+			var arr=['1','2','3','4']
+			// console.log(arr[0])
+			console.log(arr[sum(0,arr.length-1)])
+			
+			
+			//猜数字
+			function sum(min,max){
+				return Math.floor(Math.random()*(max-min+1))+min
+			}
+			var random=sum(1,10)
+			while(true){
+				var num=prompt('猜数字')
+				if(num>random){
+					alert('猜大了')
+				}else if(num<random){
+					alert('猜小了')
+				}else{
+					alert('对了')
+					break;
+			}
+		</script>
+	</body>
+</html>

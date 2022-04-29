@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            /* opacity: 0.5; */
+            background-color: rgba(255, 0, 0, .5);
+            /* 背景颜色  rgba ie8下无效*/
+            background-image: url("images/1.jpg");
+            /* 背景图片 */
+            background-repeat: no-repeat;
+            /* 背景图片的重复设置 */
+            background-position: center;
+            /* 背景图片的位置设置 */
+            background: url("images/12.png") no-repeat center rgba(255, 0, 0, .5);
+            /* 背景简写 */
+            background-size: 100% 100%;
+            /* 背景图片尺寸 ie8下无效 */
+            background-image: linear-gradient(225deg, red, blue 30%, yellow 90%);
+            /* css3线性渐变 */
+            background-image: radial-gradient(red 30%, green 40%);
+            /* 径向渐变 */
+            border-radius: 0 200px;
+            /* css3圆角设置 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        123456789
+    </div>
+</body>
+
+</html>

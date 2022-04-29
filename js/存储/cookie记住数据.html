@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.a {
+				position: absolute;
+				margin: 20px;
+			}
+
+			.a li {
+				list-style-type: none;
+
+			}
+
+			.b {
+				margin-top: 10px;
+				margin-left: 5px;
+				width: 160px;
+				height: 30px;
+				border: none;
+				background-color: #00FFFF;
+				border-radius: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="a">
+			<form action="" method="">
+				<ul>
+					<li><input type="text" placeholder="请输入账号" /></li>
+					<li><input type="password" placeholder="请输入密码" /></li>
+					<li><input type="checkbox" id="num" />记住密码&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="b" />自动登录</li>
+					<li><button class="b" type="button">登&nbsp;&nbsp;录</button></li>
+				</ul>
+			</form>
+
+		</div>
+		<script type="text/javascript">
+			var input = document.querySelectorAll("input");
+			var b = document.getElementById("b").checked;
+			var but = document.querySelectorAll("button")
+			but[0].onclick = function() {
+				var num = document.getElementById("num").checked;
+				if (input[0].value == "") {
+					alert("请输入账号")
+				}
+				if (input[1].value == "") {
+					alert("请输入密码")
+				}
+				if (num == true) {
+							var admin = {
+								user: input[0].value,
+								password: input[1].value
+							}
+							console.log(admin)
+							document.cookie = "admin=" + JSON.stringify(admin)
+				}
+			} 
+			
+			// btn[1].onclick=function(){
+			// 	console.log("读取")
+			// 	// 读取所有cookie数据，结果是字符串
+			// 	console.log(document.cookie)  //"password=123;user=阿萨德"
+			// 	// var str=document.cookie
+			// 	// console.log(str.split(";")[0].split("=")[1])
+			// 	var admin=JSON.parse(document.cookie.split("=")[1]) 
+			// 	console.log(admin.user) 
+			// 	console.log(admin.password)
+			// }
+			// 	but[0].onclick=function(){
+			// if(num==true){
+			// 			var admin={
+			// 				user:input[0].value,
+			// 				password:input[1].value
+			// 			}
+			// 			console.log(admin)
+			// 			document.cookie="admin="+JSON.stringify(admin)
+			// }
+			// }
+		</script>
+	</body>
+</html>

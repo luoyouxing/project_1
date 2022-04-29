@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div>	
+			<input type="button" id="code" onclick="createCode()" />
+		</div>
+		<script type="text/javascript">
+			var code;
+			function createCode() {
+				newCode = '';
+				var codeLength = 4;
+				var oldCode = document.getElementById('code');
+				var random = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
+					'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
+				for (var i = 0; i < codeLength; i++) {
+					var index = Math.floor(Math.random() * 36);
+					newCode += random[index];
+				}
+				oldCode.value = newCode;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button type="button">点击</button>
+		<div class="en" style="display: none;">
+			327687687
+		</div>
+		<script type="text/javascript">
+			var btn=document.getElementsByTagName("button")[0]
+			var en=document.getElementsByClassName("en")[0]
+			btn.onclick=function(){
+				if(en.style.display=="none"){
+					en.style.display="block";
+				}else{
+					en.style.display="none";
+				}
+				
+			}	
+		</script>
+	</body>
+</html>

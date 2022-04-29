@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.can{
+				background-color: #00FFFF;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas class="can" width="302" height="302"></canvas>
+		<script type="text/javascript">
+			var box = document.getElementsByClassName("can")[0]
+			var obj = box.getContext("2d")
+			obj.arc(151,151,150,0,2*Math.PI,false)
+			obj.strokeStyle = "red" 
+			obj.stroke()
+			obj.beginPath()
+			obj.arc(151,151,140,0,2*Math.PI,false)
+			obj.stroke()
+			obj.beginPath()
+			obj.moveTo(30,80)
+			obj.lineTo(272, 80)
+			obj.lineTo(152, 290)
+			obj.lineTo(30,80)
+			obj.stroke()
+			obj.translate(205,-55)
+			for(var i=0;i<1;i++){
+				obj.rotate(Math.PI / 180 * 60)
+				obj.moveTo(30,80)
+				obj.lineTo(272, 80)
+				obj.lineTo(152, 290)
+				obj.lineTo(30,80)
+				obj.stroke()
+			}
+		</script>
+	</body>
+</html>

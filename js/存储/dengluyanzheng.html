@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<span>账号</span><input type="text" id="" /><br />
+		<span>密码</span><input type="password" name="" />
+		<br />
+		<input type="checkbox" id="play" value="记住密码">
+		<label for="play">记住密码</label>
+		<input type="checkbox" id="er" value="自动登录">
+		<label for="er">自动登入</label>
+		<br />
+
+		<button>登录账号</button>
+		<button>注册账号</button>
+		<button>注销账号</button>
+	</body>
+	<script type="text/javascript">
+		var inp = document.querySelectorAll("input")
+		var btn = document.querySelectorAll("button")
+		var admin = []
+
+		if (document.cookie.length > 0) {
+			admin = JSON.parse(document.cookie.split("=")[1])
+		}
+		console.log(admin)
+		
+		inp[0].onblur=function(){
+			var inp = document.querySelectorAll("input")
+			for(i=0;i<admin.length;i++){
+				if(inp[0].value==admin[i].name){
+					if(admin[i].baochun){
+						inp[1].value=admin[i].pwd
+						inp[2].checked=admin[i].baochun
+					}
+				}
+			}
+		}
+		btn[0].onclick = function() {
+			var ccx = document.querySelectorAll("input")[2].checked
+			for (i = 0; i < admin.length; i++) {
+				if (inp[0].value == admin[i].name) {
+					if (admin[i].pwd == inp[1].value) {
+						alert("账号密码正确登入成功")
+						if (ccx) {
+							admin[i].baochun = true
+							daoru()
+							return
+						} else {
+							admin[i].baochun = false
+							daoru()
+							return
+						}
+					} else{
+						alert('密码错误登录失败')
+						return
+					}
+				} else {
+					if (i == admin.length - 1) {
+						alert("账号错误")
+						return
+					}
+				}
+			}
+		}
+
+		btn[1].onclick = function() {
+			var pd = true
+
+			if (inp[0].value.length <= 1) {
+				alert("账号必须长度必须大于一")
+				return
+			}
+
+			if (inp[1].value.length <= 3) {
+				alert("密码必须长度必须大于3")
+				return
+			}
+
+			zhuce() ? add() : alert("你的账号已经重复")
+
+		}
+
+		btn[2].onclick = function() {
+			//注销
+			var r = zhuxiao()
+			if (inp[1].value == admin[r].pwd) {
+				admin.splice(r, 1)
+				var today = new Date();
+				today.setHours(today.getHours() + 80000000)
+				document.cookie = "admin=" + JSON.stringify(admin) + ";expires=" + today.toUTCString() + ";path=/"
+				alert("注销成功")
+			}
+		}
+
+		function add() {
+			var today = new Date();
+			today.setHours(today.getHours() + 80000000)
+			var tro = {
+				name: inp[0].value,
+				pwd: inp[1].value,
+				baochun: false
+			}
+			admin.push(tro)
+			alert("注册成功")
+			document.cookie = "admin=" + JSON.stringify(admin) + ";expires=" + today.toUTCString() + ";path=/"
+		}
+
+		function zhuxiao() {
+			for (i = 0; i < admin.length; i++) {
+				if (inp[0].value == admin[i].name) {
+					return i
+				}
+			}
+			alert("无此账号")
+		}
+
+		function zhuce() {
+			var na = inp[0].value
+			for (i = 0; i < admin.length; i++) {
+				if (na == admin[i].name) {
+					pd = false
+					return pd
+				}
+			}
+			pd = true
+			return pd
+		}
+		function daoru()
+		{
+			var today = new Date();
+			today.setHours(today.getHours() + 80000000)
+			document.cookie = "admin=" + JSON.stringify(admin) + ";expires=" + today.toUTCString() +
+				";path=/"
+				console.log("daoruchengong")
+		}
+	</script>
+</html>

@@ -1,0 +1,170 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 100px;
+}
+
+.top {
+	height: 0.9rem;
+	text-align: center;
+	line-height: 0.9rem;
+	font-size: 0.36rem;
+	background-color: #ff5e46;
+	width: 7.5rem;
+	color: white;
+	/* position: fixed;
+	z-index: 999; */
+}
+
+.month {
+	width: 7.5rem;
+}
+
+.month ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	width: 6.8rem;
+	margin: auto;
+}
+
+.month ul li {
+	list-style: none;
+	font-size: 0.3rem;
+	display: flex;
+	height: 1.2rem;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.month span {
+	font-size: 0.26rem;
+}
+
+.center {
+	width: 7.5rem;
+}
+
+.dengji {
+	width: 6.8rem;
+	height: 2.6rem;
+	background-color: #FF5E46;
+	margin: auto;
+	border-radius: 0.1rem;
+	display: flex;
+	justify-content: space-around;
+}
+
+.ji {
+	font-size: 0.32rem;
+	position: relative;
+	color: white;
+}
+
+.ji .ji1 {
+	height: 2.6rem;
+	width: 6.3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.ji .ji1 li {
+	list-style: none;
+}
+
+.deng {
+	display: flex;
+	height: 0.8rem;
+	width: 6.3rem;
+	flex-direction: column;
+	font-size: 0.28rem;
+}
+
+.deng ul {
+	display: flex;
+	justify-content: space-between;
+}
+
+.heng {
+	width: 6.3rem;
+	height: 0.05rem;
+	background-color: white;
+	border-radius: 0.1rem;
+}
+
+.heng1 {
+	width: 3.5rem;
+	height: 0.05rem;
+	background-color: #eecf8b;
+	border-radius: 0.1rem;
+	position: absolute;
+	bottom: 0.72rem;
+}
+
+.renwu {
+	font-size: 0.32rem;
+	width: 6.8rem;
+	height: 0.9rem;
+	margin: auto;
+	line-height: 1.1rem;
+}
+
+.bottom ul {
+	font-size: 0.28rem;
+	width: 7.5rem;
+}
+
+.bottom ul li {
+	height: 1rem;
+	display: flex;
+	border-bottom: 0.01rem solid #eeeeee;
+	align-items: center;
+
+	justify-content: space-between;
+}
+
+.an {
+	font-size: 0.22rem;
+}
+
+.a p {
+	width: 1.73rem;
+}
+
+.b {
+	width: 0.62rem;
+}
+
+.left {
+	width: 4rem;
+	height: .7rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	color: #666666;
+}
+
+.right {
+	width: 1.7rem;
+}
+
+.right p {
+	width: 1.3rem;
+	height: 0.5rem;
+	background-color: #FF5E46;
+	text-align: center;
+	line-height: 0.5rem;
+	border-radius: 0.5rem;
+	color: white;
+}
+
+@media screen and (max-width:375px) {
+	html {
+		font-size: 50px;
+	}
+}

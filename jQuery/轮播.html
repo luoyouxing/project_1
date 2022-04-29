@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="jquery-1.7.2.js"></script>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.center {
+				width: 800px;
+				height: 500px;
+				border: 1px solid black;
+				margin: auto;
+				position: relative;
+			}
+
+			ul li {
+				position: absolute;
+				list-style: none;
+			}
+
+			img {
+				width: 220px;
+				height: 150px;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="center">
+			<ul>
+				<li><img src="./img/1.jpg"></li>
+				<li><img src="./img/2.jpg"></li>
+				<li><img src="./img/3.jpg"></li>
+				<li><img src="./img/4.jpg"></li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			var arr = [{
+					left:"300px",
+					top:"300px",
+					opacity: 1,
+					zIndex: 3
+				},
+				{	
+					left:"465px",
+					top:"220px",
+					opacity: 0.95,
+					zIndex: 2
+				},
+				{
+					left:"300px",
+					top:"145px",
+					opacity: 0.8,
+					zIndex: 1
+				},
+				{
+					left:"130px",
+					top:"220px",
+					opacity: 0.95,
+					zIndex: 2
+				}
+			]
+			$(".center li").each(function(i, v) {
+				$(this).css(arr[i])
+			})
+			setInterval(function() {
+				arr.push(arr.splice(0,1)[0])
+				$(".center li").each(function(i,v){
+					$(this).animate(arr[i],300,()=>{})
+				})
+			},1000)
+		</script>
+	</body>
+</html>

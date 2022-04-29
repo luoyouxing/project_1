@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div>
+			<span id="yz"></span>
+			<input type="button" onclick="fn()" value="刷新" />
+		</div>
+		<script type="text/javascript">
+			//如何在数组指定位置添加成员？
+			var arr = [1, 2, 3, 4, 5, 6]
+			var arr1 = arr.splice(0, 1)
+			arr1.push("66")
+			// console.log((arr1)) 
+			document.write(arr1 + "," + arr + "<br>")
+			// "hello word!"首字母大写，然后反序
+			var ar = "hello world!"
+			var ar1 = ar.split("")
+			ar1[0] = ar[0].toUpperCase()
+			ar1[6] = ar[6].toUpperCase()
+			document.write(ar1.join("") + "<br>")
+			var ar2 = ar1.join("").split("").reverse().join("")
+			document.write(ar2 + "<br />")
+
+			// 随机四位数（不重复，区分大小写）验证码
+			var s = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+			function fn() {
+				document.getElementById("yz").innerHTML = creat(4)
+			}
+
+			function creat(n) {
+				var a = "";
+				for (var i = 0; i < n; i++) {
+					var index = Math.floor(Math.random() * 62)
+					a = a + s.charAt(index);
+				}
+				return a;
+			}
+			window.onload = fn;
+			// 读取字符串“http://www.baidu.com?b=456&a=123”中的a和b的数据
+			var n = "http://www.baidu.com?a=123&b=456"
+			console.log(n.indexOf("?"))
+			document.write(n.substr(21, 5) + "<br />")
+			document.write(n.substr(27, 32) + "<br />")
+			// 模拟数组sort排序写法: [4,9,3,5,7]
+			var x = [4, 9, 3, 5, 7, 21, 2, 56, 27]
+			for (var y = 0; y < x.length; y++) {
+				for (var z = 0; z < x.length - 1; z++) {
+					if (x[z] > x[z + 1]) {
+						var k = x[z]
+						x[z] = x[z + 1]
+						x[z + 1] = k
+					}
+				}
+			}
+			console.log(x)
+			// 每隔1s向数组添加新成员（不重复），满15个后，每隔1s随机输出其中一个成员(不能重复)，直到全部输出
+
+			var num = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+			num = num.split("")
+			var arr = []
+			var x= 0
+			var luo = setInterval(function fn() {
+				var m = []
+				var i = Math.floor(Math.random() * 3)+1
+				for (var ln = 0; ln < i; ln++) {
+					num1 = Math.floor(Math.random() * num.length)
+					m = m + num[num1]
+				}
+				arr[x]=m;
+				if(arr.length==15){
+					clearInterval(luo)
+				}
+				x++
+				console.log(arr)
+			}, 1000)
+		</script>
+	</body>
+</html>

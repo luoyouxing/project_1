@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../js/bootstrap.min.css" />
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.en {
+				position: absolute;
+				left: 400px;
+			}
+
+			#e {
+				background-color: #000000;
+				width: 100% !important;
+				height: 100% !important;
+				opacity: 0.4;
+				position: absolute;
+			}
+			
+			.enn {
+				position: absolute;
+				left: 400px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="e" style="display: none;"></div>
+		<div>
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+				data-whatever="@mdo">添加</button>
+				<a href="/find">查询</a>
+			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<ul class="nav nav-tabs" role="tablist">
+							<li role="presentation" class="active"><a href="#login" aria-controls="login" role="tab"
+									data-toggle="tab">添加</a></li>
+						</ul>
+						<div class="tab-content">
+							<div role="tabpanel" class="tab-pane active" id="login">
+								<form class="form-horizontal" action="/add" method="post">
+									<div class="form-group">
+										<label for="user" class="col-sm-2 control-label">姓名：</label>
+										<div class="col-sm-10">
+											<input type="text" name="name" class="form-control" id="user">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="inputPassword3" class="col-sm-2 control-label">性别：</label>
+										<div class="col-sm-10">
+											<input type="text" name="sex" class="form-control" id="inputPassword3">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="inputPassword3" class="col-sm-2 control-label">年龄：</label>
+										<div class="col-sm-10">
+											<input type="text" name="age" class="form-control" id="inputPassword3">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="inputPassword3" class="col-sm-2 control-label">爱好：</label>
+										<div class="col-sm-10">
+											<input type="text" name="hobbies" class="form-control" id="inputPassword3">
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-offset-2 col-sm-10">
+											<button type="submit" class="btn btn-default">提交</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<table border="1">
+			<tr>
+				<td>姓名</td>
+				<td>性别</td>
+				<td>学号</td>
+				<td>爱好</td>
+				<td>操作</td>
+			</tr>
+			{{each obj v i}}
+			<tr>
+				<td>{{v.name}}</td>
+				<td>{{v.sex}}</td>
+				<td>{{v.age}}</td>
+				<td>{{v.hobbies}}</td>
+				<td>
+					<button type="button" class="change">修改</button>
+					<div class="en" style="display: none;">
+						<form action="/mod" method="post">
+							姓名：<input type="text" name="name" value="{{v.name}}" readonly /><br />
+							性别：<input type="text" name="sex" value="{{v.sex}}" /><br />
+							年龄：<input type="text" name="age" value="{{v.age}}" /><br />
+							爱好：<input type="text" name="hobbies" value="{{v.hobbies}}" /><br />
+							<input type="submit" value="提交" />
+						</form>
+					</div>
+					<a href="/del?name={{v.name}}">删除</a>
+				</td>
+			</tr>
+			{{/each}}
+		</table>
+	</body>
+	<script type="text/javascript">
+		var str = "{{token}}"
+		if (str) {
+			localStorage.setItem("str", str)
+		} else {
+			if (localStorage.getItem("str")) {
+				var xhr = new XMLHttpRequest()
+				xhr.open("POST", "/token", true)
+				xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded")
+				xhr.onload = function() {
+					if (this.responseText == "登录失败") {
+						location.href = "/index"
+					}
+				}
+				xhr.send("b=" + localStorage.getItem("str"))
+			} else {
+				location.href = "/index"
+			}
+		}
+	</script>
+	<script type="text/javascript">
+		var en = document.getElementsByClassName("en")
+		var btn = document.getElementsByClassName("change")
+		var e = document.getElementById("e")
+		// console.log(btn)
+		for (let i = 0; i < btn.length; i++) {
+			btn[i].onclick = function() {
+				en[i].style.display = "block";
+				e.style.display = "block";
+			}
+		}
+	</script>
+</html>

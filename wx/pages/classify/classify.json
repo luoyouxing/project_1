@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "abc":"../../components/text/text"
+  },
+  "navigationBarBackgroundColor": "#eeeeee",
+  "navigationBarTitleText": "类别",
+  "enablePullDownRefresh": true,
+  "backgroundColorTop": "#eeeeee",
+  "backgroundTextStyle": "dark"
+}

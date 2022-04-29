@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="a">
+
+		</div>
+		<script type="text/javascript">
+			var a = document.getElementById("a")
+			setInterval(function() {
+				var xianzai = new Date()
+				var xiaban = new Date(2021, 11, 25, 17, 45)
+				var time = xiaban.getTime() - xianzai.getTime()
+				a.innerHTML = "距离下班还有"+Math.floor(time / 1000 / 60 / 60) + "小时" + (Math.floor(time / 1000 / 60) - Math.floor(time / 1000 /60 / 60) * 60) + "分"+(Math.floor(time / 1000)-Math.floor(time / 1000 /60 ) * 60)+"秒"
+			}, 1000)
+			
+		</script>
+	</body>
+</html>
+

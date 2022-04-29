@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 弹性布局display:flex 
+    css3属性 ie11都不兼容  pc端不建议使用
+    总共有13个属性 6个容器属性 6项目属性 1个全局属性
+    -->
+
+    <div class="box">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </div>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: red;
+            display: flex;
+            /* 弹性布局 */
+            flex-direction: row;
+            /* 确定主轴及其排序方式 */
+            flex-wrap: wrap;
+            /* 换行设置 */
+            flex-flow: row nowrap;
+            /* 上面两个属性简写 */
+            justify-content: space-between;
+            /* 主轴上的对齐方式 */
+            align-items: stretch;
+            /* 交叉轴上的对齐方式（适合于项目只有一行或一列时使用） */
+            align-content: space-between;
+            /* 交叉轴上的对齐方式（适合于项目有多行或多列时使用） */
+        }
+        
+        .box>div {
+            flex-basis: 40px;
+            height: 40px;
+            margin: 1px;
+            background-color: yellow;
+        }
+        
+        .box>div:nth-child(2) {
+            background-color: cyan;
+            line-height: 40px;
+            order: 3;
+            /* 项目排序 默认0 数值越大越前面*/
+            flex-grow: 2;
+            /* 项目放大设置 默认0不放大  */
+            flex-shrink: 0;
+            /* 项目缩小 0不缩小 */
+            flex-basis: 50px;
+            /* 主轴上的基础尺寸 */
+            flex: 2 0 50px;
+            /* 上面三个属性的简写 */
+            align-self: flex-end;
+            /* 单独控制项目排序 */
+        }
+        
+        .box>div:nth-child(4) {
+            background-color: green;
+            order: 2;
+            flex-grow: 1;
+        }
+    </style>
+    <hr>
+    <div class="one">
+        <div></div>
+    </div>
+    <style>
+        .one {
+            width: 200px;
+            height: 200px;
+            background-color: grey;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* position: relative; */
+        }
+        
+        .one>div {
+            width: 80px;
+            height: 80px;
+            background-color: white;
+            border-radius: 50%;
+            /* position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%); */
+        }
+    </style>
+    <hr>
+
+    <div class="two">
+        <div></div>
+        <div></div>
+    </div>
+    <style>
+        .two {
+            width: 200px;
+            height: 200px;
+            padding: 30px;
+            border: 5px solid red;
+            box-sizing: border-box;
+            /* css3盒模型设置 */
+            background-color: grey;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .two>div {
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border-radius: 50%;
+        }
+        
+        .two>div:last-child {
+            align-self: flex-end;
+        }
+    </style>
+
+</body>
+
+</html>

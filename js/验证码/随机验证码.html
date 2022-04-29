@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>随机验证码练习</title>
+	</head>
+	<body>
+		<span id="yzm"></span>
+		<input type="button" value="刷新" onClick="show()">
+		<script type="text/javascript">
+			var s = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+			function show() {
+				document.getElementById("yzm").innerHTML = creat(4);
+			};
+			function creat(n) {
+				var b = "";
+				for (var i = 0; i < n; i++) {
+					var index = Math.floor(Math.random() * 62)
+					b = b + s.charAt(index);
+				}
+				return b;
+			}
+
+			window.onload = show;
+		</script>
+	</body>
+</html>

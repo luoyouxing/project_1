@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//post获取接口数据
+			var xhr=new XMLHttpRequest()//建立连接
+			xhr.open("POST","http://localhost:2020/data",true)//打开网站
+			xhr.setRequestHeader("content-type","application/x-www-form-urlencoded")//设置请求头
+			xhr.onload=function(){//等待响应
+				console.log(this.responseText)
+			}
+			xhr.send("_id=623be3e6b7836e1a95c0a127")//发送请求
+			//get获取接口数据
+			var xhr=new XMLHttpRequest()
+			xhr.open("GET","http://localhost:2020/data?_id=623ad2d48686b67922cdf8e4",true)
+			xhr.setRequestHeader("content-type","application/x-www-form-urlencoded")
+			xhr.onload=function(){
+				console.log(this.responseText)
+			}
+			xhr.send()
+		</script>
+	</body>
+</html>

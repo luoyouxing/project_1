@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			form {
+				position: relative;
+			}
+
+			textarea {
+				height: 100px;
+				width: 200px;
+				resize: none;
+				/* 禁止用户缩放 */
+				outline: none;
+				/* 清除焦点状态的边框 */
+				font-size: 16px;
+				font-family: "microsoft yahei";
+			}
+
+			input:first-child{
+				width: 200px;
+			}
+			input:last-child{
+				position: absolute;
+				background-color: lightgreen;
+				border: none;
+				border-radius: 50px;
+				opacity: 0.8;
+				bottom: 5px;
+				left: 160px;
+			}
+
+			ul li {
+				list-style: none;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="/pl" method="get">
+			<input type="text" name="name" placeholder="请输入你的名字"/><br />
+			<textarea name="txt"></textarea>
+			<input type="submit" value="评论" />
+		</form>
+		<ul>{{each arr v i}}
+			<li>{{v.name}} {{v.txt}}</li>
+			{{/each}}
+		</ul>
+	</body>
+</html>

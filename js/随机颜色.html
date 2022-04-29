@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#a {
+				width: 200px;
+				height: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="a">
+		</div>
+		<script type="text/javascript">
+			var o = document.getElementById("a")
+			setInterval(function() {
+				var x = Math.round(Math.random() * 225)
+				var y = Math.round(Math.random() * 225)
+				var z = Math.round(Math.random() * 225)
+				o.style.backgroundColor="rgb("+x+","+y+","+z+")"
+			}, 2000)
+			
+		</script>
+	</body>
+</html>

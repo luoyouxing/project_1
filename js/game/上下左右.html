@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.a {
+				width: 500px;
+				height: 500px;
+				border: 1px solid #00FFFF;
+				position: absolute;
+				top: 100px;
+				left: 200px;
+			}
+
+			.b {
+				width: 50px;
+				height: 50px;
+				background-color: #00FFFF;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="a">
+			<div class="b">
+			</div>
+		</div>
+		<script type="text/javascript">
+			window.onload = function() {
+				var box = document.getElementsByClassName("b")[0]
+				var left = false
+				var top = false
+				var right = false
+				var bottom = false
+				document.onkeydown = function() {
+					var key = event.charCode || event.keyCode || event.witch
+					event.preventDefault()
+					switch (key) {
+						case 37:
+							left = true;
+							break;
+						case 38:
+							top = true;
+							break;
+						case 39:
+							right = true;
+							break;
+						case 40:
+							bottom = true;
+							break;
+					}
+				}
+				setInterval(function() {
+					if (left&& box.offsetLeft>0) {
+						box.style.left = box.offsetLeft - 10 + "px"
+					} else if (right&&box.offsetLeft<450) {
+						box.style.left = box.offsetLeft + 10 + "px"
+					}
+					if (top&&box.offsetTop>0) {
+						box.style.top = box.offsetTop - 10 + "px"
+					} else if (bottom&&box.offsetTop<450) {
+						box.style.top = box.offsetTop + 10 + "px"
+					}
+				}, 1)
+				document.onkeyup = function() {
+					var key = event.charCode || event.keyCode || event.witch
+					switch (key) {
+						case 37:
+							left = false;
+							break;
+						case 38:
+							top = false;
+							break;
+						case 39:
+							right = false;
+							break;
+						case 40:
+							bottom = false;
+							break;
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			table {
+				/* width: 800px; */
+				border-collapse: collapse;
+			}
+
+			td,
+			table {
+				border: 1px solid #00FFFF;
+				text-align: center;
+			}
+
+			td {
+				width: 80px;
+			}
+
+			.a1 {
+				width: 33.5px;
+			}
+
+			.a2 {
+				width: 323px;
+			}
+
+			img {
+				width: 80px;
+			}
+
+			.bto {
+				width: 40px;
+				margin: 0 2px;
+			}
+
+			button {
+				width: 12px;
+			}
+
+			.delete {
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td style="width: 33.5px;"></td>
+				<td>商品</td>
+				<td>商品名称</td>
+				<td>单价</td>
+				<td>数量</td>
+				<td>商品价格</td>
+				<td>操作</td>
+			</tr>
+		</table>
+		<table height="40px">
+			<tr>
+				<td class='a1'><input type="checkbox" id="a2" /></td>
+				<td>全选</td>
+				<td class="a2" id="total">总价：￥0.00</td>
+				<td>去结算</td>
+			</tr>
+		</table>
+		<script type="text/javascript">
+			var tr1 = "<tr><td class='a1'></td><td>商品</td><td>商品名称</td><td>单价</td><td>数量</td><td>商品价格</td><td>操作</td></tr>"
+			var tab1 = document.getElementsByTagName("table")[0]
+			var an = JSON.parse(localStorage.getItem("shop"))
+
+			for (var i = 0; i < an.length; i++) {
+				tr1 += "<tr><td  class='a1'><input type='checkbox' class='check'/></td><td><img src='" + an[i].img +
+					"'></td><td>" + an[i].name + "</td><td>" + an[i].price +
+					"</td><td><button onclick='jian(" + i +
+					")'>-</button><input type='text' value=" + an[i].num + " class='bto'/><button onclick='jia(" + i +
+					")'>+</button></td><td class='prices'>" + "￥" + (an[i].price.replace("￥", "") * an[i].num).toFixed(2) +
+					" </td><td class='delete'>删除</td></tr>"
+				tab1.innerHTML = tr1
+			}
+			var checks = document.getElementsByClassName("check")
+			console.log(checks)
+			var a3 = document.getElementById("a2")
+			console.log(a3)
+			var arr = []
+			for (var i = 0; i < checks.length; i++) { //把check值放入数组
+				arr.push(checks[i])
+			}
+			arr.forEach(function(v) { //把数组进行遍历
+				v.onclick = function() {
+					al()
+				}
+			})
+
+			function al() { //判断check是否为true
+				var arr = []
+				for (var i = 0; i < checks.length; i++) {
+					arr.push(checks[i])
+					console.log(checks.length)
+				}
+				var bool = arr.some(function(a) {
+					return a.checked == false
+				})
+				bool ? a3.checked = false : a3.checked = true;
+				console.log(arr)
+				zongjia()
+			}
+
+			a3.onclick = function() { //判断全选按钮
+				if (a3.checked == true) {
+					for (var i = 0; i < checks.length; i++) {
+						checks[i].checked = true
+					}
+				} else {
+					for (var i = 0; i < checks.length; i++) {
+						checks[i].checked = false
+					}
+				}
+				zongjia()
+			}
+			var del = document.getElementsByClassName("delete")
+			for (var o = 0; o < an.length; o++) { //删除行,重新执行check判断
+				del[o].onclick = function() {
+					var s = this.parentElement.children[3]
+					var i = an.findIndex(function(v) {
+						return v.price == s.innerHTML
+					})
+					arr.splice(i, 1)
+					an.splice(i, 1)
+					tab1.children[0].removeChild(s.parentElement)
+					localStorage.setItem("shop", JSON.stringify(an))
+					al()
+				}
+			}
+			var pr = document.getElementsByClassName("prices")
+			var demo = document.getElementsByClassName("bto")
+
+			function jian(i) { //计算商品数量
+				demo[i].value = demo[i].value - 1;
+				pr[i].innerHTML = "￥" + (demo[i].value * an[i].price.replace("￥", "")).toFixed(2) //计算价格
+				if (demo[i].value <= 1) {
+					demo[i].value = 1;
+				}
+				zongjia()
+
+			}
+
+			function jia(i) { //计算商品数量
+				demo[i].value = Number(demo[i].value) + 1;
+				pr[i].innerHTML = "￥" + (demo[i].value * an[i].price.replace("￥", "")).toFixed(2) //计算价格
+				if (demo[i].value > 10) {
+					demo[i].value = 10;
+				}
+				zongjia()
+			}
+			var tal = document.getElementById("total")
+
+			function zongjia() {
+				var jie = 0
+				console.log(arr.length)
+				if (arr.length > 0) {
+					var tre = arr.filter(function(v, i) {
+						return v.checked
+					})
+					// console.log(tre[0].parentElement.parentElement.children[5].innerHTML)
+					tre.forEach(function(v, i) { //获取商品价格
+						jie += Number(v.parentElement.parentElement.children[5].innerHTML.replace("￥", ""))
+					})
+				}
+				tal.innerHTML = "总价为:￥" + jie.toFixed(2)
+				console.log(tre)
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="height: 150px;">
+        <div class="box1">11</div>
+        <div class="box2">22</div>
+    </div>
+    这里的内容上不去
+    <div class="box3">33</div>
+    <div class="box4">44</div>
+    <span class="box5">55</span>
+    <div class="box">
+        <span class="box6">66</span>
+        <div class="box7">77</div>
+    </div>
+    <style>
+        /* 定位布局 position */
+        
+        .box1 {
+            width: 200px;
+            height: 100px;
+            background-color: red;
+        }
+        
+        .box2 {
+            width: 200px;
+            height: 100px;
+            background-color: orange;
+            position: relative;
+            right: -100px;
+            top: -50px;
+            z-index: 1;
+            /* 相对定位：不会改变元素特性，基本没变化 
+            相对于原来位置进行移动，
+            移动多少距离由left/right/top/bottom等控制
+            z-index是层级设置：数值越大越上面显示（内容可以被覆盖），网页默认0
+
+            注意：相对定位没有脱离文档流，原来位置会一直存在，
+            会继续占用空间，导致后面内容上不来
+            */
+        }
+        
+        .box3 {
+            width: 200px;
+            height: 100px;
+            background-color: yellow;
+            position: relative;
+            right: -200px;
+            top: -71px;
+            z-index: 1;
+        }
+        
+        .box4 {
+            width: 200px;
+            height: 100px;
+            background-color: green;
+        }
+        
+        .box5 {
+            background-color: cyan;
+            position: fixed;
+            right: 10px;
+            left: 10px;
+            top: 10px;
+            bottom: 10px;
+            opacity: .5;
+            /* 透明度设置 1不透明 0透明 内容也会透明*/
+            z-index: -99999;
+            /* 固定定位：会改变元素特性(行内元素可以设置宽高，块状元素只占内容宽度)
+            固定在浏览器的显示窗口上(视口上)
+            移动多少距离由left/right/top/bottom等控制
+            z-index是层级设置：数值越大越上面显示（内容可以被覆盖），网页默认0
+            
+            注意：固定定位会脱离文档流，原来位置不存在，
+            不会继续占用空间，导致后面内容自动挤上来
+            */
+        }
+        
+        .box6 {
+            width: 200px;
+            height: 100px;
+            background-color: blue;
+            position: absolute;
+            right: 0;
+            top: 0;
+            /* 绝对定位：会改变元素特性(行内元素可以设置宽高，块状元素只占内容宽度)
+            参照物并不绝对，是可以换的
+            先以最近的父级定位元素为参照物进行移动，若果没有则以整个页面为参照物进行移动
+            移动多少距离由left/right/top/bottom等控制
+            z-index是层级设置：数值越大越上面显示（内容可以被覆盖），网页默认0
+
+            注意：固定定位会脱离文档流，原来位置不存在，
+            不会继续占用空间，导致后面内容自动挤上来
+            */
+        }
+        
+        .box7 {
+            width: 205px;
+            height: 105px;
+            background-color: purple;
+        }
+        
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: grey;
+            position: relative;
+        }
+    </style>
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//数组转化为字符串
+			//1.toString()将数组转化为字符串
+			var arr=[1,2,3];
+			console.log(arr.toString())//1,2,3
+			
+			//2.join(分隔符)
+			var arr1=['green','blue','pink'];
+			console.log(arr1.join());
+			console.log(arr1.join('-'));
+			
+			//3.concat()//连接两个不同的数组 不影响原数组 返回一个新的数组
+			var arr2=['green','blue','pink'];
+			console.log(arr2.concat(arr));
+			
+			//4.slice()数组截取slice(begin,end) 返回被截取项目的新数组
+			var arr3=['green','blue','pink'];
+			console.log(arr3.slice(0,1));
+			
+			//5.splice() splice(第几个开始，要删除个数) 返回被删除项目的新数组 会影响原数组
+			var arr4=['green','blue','pink'];
+			console.log(arr4.splice('green',2));
+		</script>
+	</body>
+</html>

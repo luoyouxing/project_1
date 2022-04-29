@@ -1,0 +1,241 @@
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .ta {
+            height: 60px;
+            background-color: #131313;
+            min-width: 1180px;
+        }
+        
+        .ta1 {
+            width: 1180px;
+            margin: auto;
+            position: relative;
+        }
+        
+        .ta1 span {
+            line-height: 60px;
+            color: #3399cc;
+            font-size: 20px;
+            display: contents;
+        }
+        
+        ul {
+            list-style-type: none;
+        }
+        
+        .ta1 ul {
+            position: absolute;
+            right: 1px;
+            top: 20px;
+        }
+        
+        .ta1 a {
+            display: block;
+        }
+        
+        .ta1 li {
+            float: left;
+            margin-right: 20px;
+            color: aliceblue;
+            position: relative;
+        }
+        
+        .ta1 ul li span:first-child {
+            position: absolute;
+            bottom: 9px;
+            right: 14px;
+            border-top: 2px solid #3399cc;
+            border-left: 2px solid #3399cc;
+            /* display: block; */
+            width: 20px;
+            height: 12px;
+            /* display: none; */
+        }
+        
+        .ta1 ul li span:last-child {
+            position: absolute;
+            top: 10px;
+            left: 14px;
+            border-bottom: 2px solid #3399cc;
+            border-right: 2px solid #3399cc;
+            /* display: block; */
+            width: 20px;
+            height: 12px;
+            /* display: none; */
+        }
+        
+        .ta1 li:hover {
+            color: #3399cc;
+        }
+        
+        .ta1 li :hover span {
+            display: block;
+        }
+        
+        .tb1 {
+            min-width: 1180px;
+            height: 500px;
+            background: url("./images/15.png");
+            position: relative;
+        }
+        
+        .tb2 {
+            position: absolute;
+            color: aliceblue;
+            right: 45%;
+            top: 15%;
+            font-size: 40px;
+        }
+        
+        .tb3 ul {
+            position: absolute;
+            top: 50%;
+            right: 31%;
+        }
+        
+        .tb3 li {
+            float: left;
+            color: aliceblue;
+            margin-right: 20px;
+            font-size: 24px;
+            margin-right: 52px;
+        }
+        
+        .tc {
+            min-width: 1180px;
+            /* height: 860px; */
+            background: url("./images/16.jpg")no-repeat;
+            margin: auto;
+        }
+        
+        .tc1 {
+            color: aliceblue;
+            text-align: center;
+            padding-top: 50px;
+            width: 1180px;
+            margin: auto;
+        }
+        
+        .tc2 {
+            width: 1180px;
+            margin: auto;
+            position: relative;
+        }
+        
+        .tc2 ul {
+            position: absolute;
+            left: 70px;
+            top: 34px;
+        }
+        
+        .tc2 li {
+            margin-bottom: 20px;
+        }
+        
+        .tc3 {
+            position: absolute;
+            left: 25%;
+            top: 34px;
+            color: aliceblue;
+        }
+        
+        .tc3 p {
+            margin-bottom: 20px;
+        }
+        
+        #tp {
+            font-size: 18px;
+        }
+        
+        .tc4 {
+            position: absolute;
+            left: 80%;
+            top: 78px;
+            color: aliceblue;
+        }
+        
+        .tc4 p {
+            margin-bottom: 20px;
+        }
+        
+        .tc5 {
+            color: aliceblue;
+            text-align: center;
+            padding-top: 15%;
+            width: 1180px;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+        
+        .td1 {
+            width: 1180px;
+            margin: 0 auto;
+        }
+        
+        .td {
+            width: 500px;
+            margin: auto;
+        }
+        
+        .td label {
+            color: #999999;
+        }
+        
+        .td div {
+            border: 2px solid #999999;
+            width: 500px;
+            margin-top: 15px;
+        }
+        
+        input {
+            width: 400px;
+            background-color: transparent;
+            /* margin-top: 15px; */
+            border: none;
+            outline: none;
+            color: aliceblue;
+            /* border: 2px solid #999999; */
+        }
+        
+        textarea {
+            height: 150px;
+            width: 500px;
+            background-color: transparent;
+            /* border: 2px solid #999999; */
+            border: none;
+            resize: none;
+            outline: none;
+            margin-top: 17px;
+            color: aliceblue;
+        }
+        
+        .te {
+            width: 1180px;
+            height: 56px;
+            margin: auto;
+        }
+        
+        .te button {
+            margin: auto;
+            display: block;
+            margin-top: 70px;
+            width: 60px;
+            background-color: #212121;
+            border: 2px solid #3399cc;
+        }
+        
+        .tx1 {
+            min-width: 1180px;
+            background-color: #131313;
+        }
+        
+        .tx2 {
+            width: 1180px;
+            margin: auto;
+            text-align: center;
+            line-height: 60px;
+            color: #999999;
+        }

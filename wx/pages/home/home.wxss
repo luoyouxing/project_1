@@ -1,0 +1,136 @@
+/* pages/home/home.wxss */
+.top {
+  margin: 0;
+  padding: 0;
+  height: 120rpx;
+  background-color: #EEEEEE;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.top text {
+  position: absolute;
+  left: 40rpx;
+  font-size: 25rpx;
+  color: #9f9f9f;
+}
+
+.top input {
+  border-radius: 50rpx;
+  background-color: #ffffff;
+  height: 70rpx;
+  width: 660rpx;
+  margin: auto;
+  padding-left: 50rpx;
+  font-size: 26rpx;
+}
+
+.center {
+  margin: 0;
+  padding: 0;
+  background-color: #EEEEEE;
+}
+
+.center swiper-item image {
+  width: 750rpx;
+  height: 300rpx;
+}
+
+.tupian ul {
+  width: 750rpx;
+  height: 390rpx;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: center;
+}
+
+.tupian ul li {
+  width: 140rpx;
+  height: 160rpx;
+  list-style: none;
+  font-size: 28rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tupian image {
+  width: 90rpx;
+  height: 90rpx;
+}
+
+.gouwu ul {
+  width: 750rpx;
+  height: 1050rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.gouwu ul li {
+  height: 500rpx;
+  list-style: none;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.gouwu image {
+  width: 345rpx;
+  height: 374rpx;
+}
+
+.bottom_1 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.jia {
+  height: 110rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.bottom_2 {
+  width: 70rpx;
+  height: 50rpx;
+}
+
+.bottom_2_1 {
+  width: 40rpx;
+  height: 40rpx;
+  border: 2rpx solid #e37198;
+  border-radius: 50rpx;
+}
+
+.bottom_2_1 text {
+  margin-left: 5.5rpx;
+  font-size: 30rpx;
+  color: #e37198;
+}
+
+.a1 {
+  font-size: 32rpx;
+}
+
+.a2 {
+  font-size: 28rpx;
+  color: #e37198;
+}
+
+.a3 {
+  font-size: 22rpx;
+  color: #999999;
+}

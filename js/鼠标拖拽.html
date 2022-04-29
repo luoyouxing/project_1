@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.a {
+				width: 200px;
+				height: 200px;
+				background-color: #00FFFF;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="a">
+		</div>
+		<ul>
+			<li draggable="true">123</li>
+			<li draggable="true">456</li>
+			<li draggable="true">789</li>
+		</ul>
+		<script type="text/javascript">
+			window.onload=function() {
+				var li = document.getElementsByTagName("li")
+				var a = document.getElementsByClassName("a")[0]
+				console.log(li)
+				for (var i = 0; i < li.length; i++) {
+					//（获取元素的标签）伪数组
+					// document.getElementById获取元素的）
+					// document.getElementsByClassName()[0]（获取元素的class）伪数组
+					li[i].ondragstart = function() {
+						console.log("开始拖拽")
+						event.dataTransfer.setData("key", this.innerText) //设置拖拽时的携带信息
+					}
+					li[i].ondragend = function() {
+					}
+					a.ondragenter = function() {
+						this.innerHTML="给爷拿过来"
+					}
+					a.ondragleave = function() {
+						this.innerHTML="我偏不"
+					}
+					a.ondragover = function() {
+						event.preventDefault()
+					}
+					a.ondrop = function() {
+						this.innerHTML = event.dataTransfer.getData("key")
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

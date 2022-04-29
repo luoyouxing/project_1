@@ -1,0 +1,192 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 100px;
+}
+
+.top1 {
+	width: 7.5rem;
+	background-color: #ff5e46;
+}
+
+.top {
+	width: 6.7rem;
+	margin: auto;
+}
+
+.top p {
+	padding-top: 1rem;
+	font-size: 0.36rem;
+	text-align: center;
+	color: #ffffff;
+}
+
+.top input {
+	text-align: center;
+	width: 6.7rem;
+	height: 0.5rem;
+	border-radius: 0.5rem;
+	border: none;
+	font-size: 0.26rem;
+}
+
+.tupian {
+	height: 3rem;
+}
+
+.tupian img {
+	width: 7.5rem;
+	/* height: 3rem; */
+	/* background: url(../../img/首页/1.jpg)no-repeat center; */
+}
+
+.in {
+	width: 7.5rem;
+	height: 3.9rem;
+	text-align: center;
+}
+
+.in p {
+	font-size: 0.26rem;
+}
+
+.in img {
+	width: 0.9rem;
+	height: 0.9rem;
+}
+
+.in1 {
+	width: 7.5rem;
+	height: 0.2rem;
+	background-color: #eeeeee;
+}
+
+.jingpin {
+	width: 7.5rem;
+}
+
+.jingpin1 ul {
+	display: flex;
+	list-style-type: none;
+	justify-content: space-around;
+}
+
+.jingpin1 ul li {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	border: 0.01rem solid #E9E9E9;
+	margin-bottom: .2rem;
+	border-radius: 0.1rem;
+}
+
+.jingpin1 img {
+	width: 2rem;
+	height: 2.1rem;
+}
+
+#p1 {
+	font-size: 0.22rem
+}
+
+#p2 {
+	margin-top: 0.3rem;
+	margin-bottom: 0.2rem;
+	font-size: .28rem;
+	font-weight: bold;
+	color: #ff5e46;
+}
+
+.in2 {
+	width: 7.5rem;
+	height: 3.9rem;
+	text-align: center;
+}
+
+.jingpin2 ul {
+	display: flex;
+	list-style-type: none;
+	/* justify-content: space-around; */
+	overflow: hidden;
+}
+
+.jingpin2 ul li {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	border: 0.01rem solid #E9E9E9;
+	margin-bottom: .2rem;
+	border-radius: 0.1rem;
+	margin-left: 0.15rem;
+	margin-right: 0.15rem;
+}
+
+.jingpin2 img {
+	width: 3.4rem;
+	height: 2.5rem;
+}
+
+.point {
+	position: relative;
+}
+
+.point ul {
+	display: flex;
+	left: 3.46rem;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+}
+
+.point ul li {
+	list-style: none;
+	background-color: #ff5e46;
+	opacity: 0.5;
+	width: 0.15rem;
+	height: 0.15rem;
+	border-radius: 0.15rem;
+	float: left;
+	margin-right: 0.2rem;
+	margin-bottom: 0.2rem;
+}
+
+.point ul li.on {
+	opacity: 1;
+}
+
+.jingpin3 ul {
+	display: flex;
+	list-style-type: none;
+	justify-content: space-around;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.jingpin3 ul li {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	border: 0.01rem solid #E9E9E9;
+	margin-bottom: .2rem;
+	border-radius: 0.1rem;
+
+}
+
+.jingpin3 img {
+	width: 3.45rem;
+	height: 2.3rem;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+@media screen and (max-width:375px) {
+	html {
+		font-size: 50px;
+	}
+}

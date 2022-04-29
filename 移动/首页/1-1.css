@@ -1,0 +1,141 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 100px;
+}
+
+.top {
+	height: 0.9rem;
+	text-align: center;
+	line-height: 0.9rem;
+	font-size: 0.36rem;
+	background-color: #ff5e46;
+	position: fixed;
+	width: 7.5rem;
+	z-index: 999;
+	top: 0rem;
+}
+
+span {
+	font-size: 0.6rem;
+	float: left;
+	/* position: absolute; */
+	/* left: 0; */
+}
+
+.daohang ul {
+	position: fixed;
+	z-index: 99;
+	width: 7.5rem;
+	background-color: white;
+	top: 0.9rem;
+	height: 0.8rem;
+	line-height: 0.8rem;
+	font-size: 0.32rem;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	border: 0.01rem solid #E9E9E9;
+}
+
+.daohang ul li {
+	list-style: none;
+	color: #747474;
+}
+
+.daohang ul li:hover {
+	color: #FF5E46;
+}
+
+.shangpin {
+	/* position: fixed; */
+	position: absolute;
+	top: 1.8rem;
+	width: 7.5rem;
+	overflow: scroll;
+}
+
+.shangpin ul {
+	padding: 0 0.4rem;
+}
+
+.shangpin ul li {
+	position: relative;
+	margin-bottom: 0.2rem;
+	margin-top: 0.2rem;
+	list-style: none;
+}
+
+.shangpin1 {
+	position: absolute;
+	font-size: 0.28rem;
+	top: 0rem;
+	left: 2.3rem;
+	color: #666666;
+}
+
+.shangpin2 {
+	position: absolute;
+	bottom: 0.8rem;
+	left: 2.25rem;
+	color: #ff9386;
+	font-size: 0.36rem;
+}
+
+.shangpin2 span {
+	position: absolute;
+	bottom: 0.02rem;
+	left: 1.2rem;
+	color: #9a9a9a;
+	font-size: 0.26rem;
+	text-decoration: line-through;
+}
+
+.shangpin3 {
+	position: absolute;
+	bottom: 0.4rem;
+	left: 2.33rem;
+	color: #9a9a9a;
+	font-size: 0.22rem;
+}
+
+.shangpin3 span {
+	position: absolute;
+	display: block;
+	width: 1rem;
+	bottom: 0rem;
+	left: 1.13rem;
+}
+
+.shangpin ul li span {
+	position: absolute;
+	font-size: 0.22rem;
+}
+
+.shangpin button {
+	width: 1.4rem;
+	height: 0.5rem;
+	border-radius: 0.5rem;
+	border: none;
+	background-color: #ff5e46;
+	font-size: 0.24rem;
+	color: white;
+	position: absolute;
+	bottom: 0.25rem;
+	right: 0rem;
+}
+
+.shangpin img {
+	height: 2.2rem;
+	width: 2.2rem;
+}
+
+@media screen and (max-width:375px) {
+	html {
+		font-size: 50px;
+	}
+}

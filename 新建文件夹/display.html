@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            display: inline;
+            /* 让该元素以行内元素的效果显示 */
+        }
+        
+        span {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            display: block;
+            /* 让该元素以行内元素的效果显示 */
+        }
+        
+        b {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            display: inline-block;
+            /* 让该元素以行内-块状元素的效果显示 */
+            vertical-align: top;
+        }
+        
+        img {
+            width: 200px;
+            height: 200px;
+            vertical-align: top;
+            display: none;
+            /* 不显示该元素，隐藏该元素（没有文档流位置） */
+            /* visibility: hidden; */
+            /* 隐藏该元素（有文档流位置） */
+            /* opacity: 0; */
+            /* 透明度隐藏 */
+        }
+    </style>
+</head>
+
+<body>
+    <div>块状元素</div>
+    <span>行内元素</span>
+    <b>行内元素</b><img src="./images/1.jpg" alt="">123
+</body>
+
+</html>

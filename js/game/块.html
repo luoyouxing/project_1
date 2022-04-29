@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button>添加</button>
+		<button>删除</button>
+		<button>修改</button>
+		<div class="box" id="box">
+			<h2>标题</h2>
+			<p>段落</p>
+			<ul>
+				<li class="li1">11</li>
+				<li class="li2">22</li>
+				<li class="li3">33</li>
+			</ul>
+			<input type="text" name="test">
+		</div>
+		<script>
+			var ul = document.querySelector("ul")
+			var lis = ul.getElementsByTagName("li")
+			var num = 44
+			setInterval(function() {
+				var res = document.createElement("li")
+				ul.insertBefore(res, ul.lastElementChild)
+				var txt = document.createTextNode(num)
+				res.appendChild(txt)
+				num += 11
+			},2000) 
+			var num = 44
+			var inp = document.getElementsByTagName("input")[0]
+			var btns = document.querySelectorAll("button")
+			btns[0].onclick = function() {
+				console.log("添加")
+				ul.appendChild(inp.cloneNode())
+				var res = document.createElement("li") 
+				ul.insertBefore(res, ul.lastElementChild)
+				var txt = document.createTextNode(num) 
+				res.appendChild(txt)
+				num += 11
+				var asd = document.createAttribute("data-id")
+				asd.value = "属性值" 
+				res.setAttributeNode(asd) 
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,1 @@
+<text bindtap="chuan">这是组件--{{com}}--{{mn}}--{{xy}}</text>

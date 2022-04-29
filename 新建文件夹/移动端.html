@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 禁止缩放页面 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../移动/font_ehoorhhgrhq/iconfont.css">
+</head>
+
+<body>
+    <div class=" box ">
+        你好
+        <span class="iconfont icon-ic_search24px"></span>
+    </div>
+    <ul>
+        <li>11</li>
+        <li>22</li>
+        <li>33</li>
+        <li>44</li>
+    </ul>
+    <style>
+        /* 固定宽高布局 */
+        
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        /* 百分比自适应布局  wap.sogou.com */
+        
+        .box {
+            width: 90%;
+            margin: 0 auto;
+            height: auto;
+            padding: 3% 0;
+        }
+        /* 响应式布局（媒体查询）  http://www.clantrip.com/
+        相应窗口尺寸的改变（大于最小，小于最大），
+        应用里面css覆盖原来的css，来变化页面布局
+        注意：顺序使用时的css覆盖问题
+        */
+        
+        ul {
+            width: 880px;
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        ul li {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            float: left;
+            margin: 0 10px;
+        }
+        
+        @media screen and (max-width:660px) {
+            ul {
+                width: 100%;
+            }
+            ul li {
+                float: none;
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+        
+        @media screen and (min-width:660px) and (max-width:880px) {
+            ul {
+                width: 680px;
+            }
+            ul li {
+                width: 150px;
+                height: 150px;
+                background-color: green;
+            }
+        }
+        /* rem单位适配屏幕 */
+        
+        html {
+            font-size: 100px;
+            /* 1rem==100px */
+        }
+        
+        body {
+            font-size: 16px;
+        }
+        
+        .box {
+            width: 2rem;
+            height: 2rem;
+            font-size: .5rem;
+            padding: 0;
+        }
+        
+        @media screen and (min-width:660px) and (max-width:880px) {
+            html {
+                font-size: 75px;
+            }
+        }
+        /* vw单位和vh单位  view width  view height
+        根据屏幕分辨率换算  
+        1920*1080   1vw==19.2px  1vh==10.8
+        1440*900    1vw==14.4px  1vh==9
+        */
+        /* 自定义字体（防止字体文件过大建议压缩下） */
+        
+        @font-face {
+            font-family: asd;
+            src: url(simkai.ttf);
+        }
+        
+        .box {
+            font-family: asd;
+        }
+        /* 字体图标：可以通过修改文字大小和颜色来实现修改图标大小和颜色 */
+        
+        span {
+            font-size: 50px!important;
+            color: yellow;
+        }
+        
+        span:hover {
+            color: orange;
+        }
+    </style>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 100px;
+}
+
+.top {
+	height: 0.9rem;
+	text-align: center;
+	line-height: 0.9rem;
+	font-size: 0.36rem;
+	background-color: #ff5e46;
+	position: fixed;
+	width: 7.5rem;
+	z-index: 999;
+	/* top: 0rem; */
+	color: white;
+}
+
+.top1 {
+	width: 7.5rem;
+	height: 1rem;
+	background-color: #ff5e46;
+	/* position: relative; */
+	position: fixed;
+	top: 0.9rem;
+	z-index: 99;
+}
+
+.top1 input {
+	position: absolute;
+	height: 0.6rem;
+	width: 6.4rem;
+	border-radius: 0.5rem;
+	border: none;
+	text-align: center;
+	top: 0.2rem;
+	left: 0.55rem;
+	font-size: 0.26rem;
+	outline: none;
+}
+
+.top1 span {
+	position: absolute;
+	top: 0.34rem;
+	font-size: 0.32rem;
+	left: 2.6rem;
+	z-index: 1;
+	color: #b2b2b2;
+}
+
+.center {
+	position: relative;
+	/* height: 9.8rem; */
+	width: 7.5rem;
+}
+
+.center1 {
+	background-color: #eeeeee;
+	position: fixed;
+	top: 1.9rem;
+	bottom: 1rem;
+	overflow: scroll;
+}
+
+.center1 li {
+	width: 1.8rem;
+	font-size: 0.32rem;
+	color: #666666;
+	height: 0.9rem;
+	line-height: 0.9rem;
+	text-align: center;
+	list-style: none;
+}
+
+.center1 li.on {
+	background-color: white;
+	width: 2rem;
+}
+
+/* .center ul li:hover{
+	background-color: white;
+} */
+.center table {
+	position: absolute;
+	top: 0.9rem;
+	right: 0;
+	font-size: 0.4rem;
+	border-collapse: collapse;
+	width: 5.7rem;
+	height: 5.4rem;
+	top: 2.7rem;
+}
+
+.center tr {
+	text-align: center;
+}
+
+.center img {
+	margin: 0.15rem 0;
+	width: 1.1rem;
+	height: 0.7rem;
+}
+
+.center td {
+	font-size: 0.28rem;
+}
+
+@media screen and (max-width:375px) {
+	html {
+		font-size: 50px;
+	}
+}

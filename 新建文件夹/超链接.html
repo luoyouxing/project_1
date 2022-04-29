@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            width: 200px;
+            height: 100px;
+            display: block;
+            color: orange;
+            text-decoration: none;
+            /* 去掉下划线 */
+            background: grey url("./images/13.png") no-repeat 10px center;
+            line-height: 100px;
+            padding-left: 45px;
+            position: relative;
+        }
+        
+        a span {
+            width: 100px;
+            height: 50px;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            border-right: 2px solid red;
+            border-bottom: 2px solid red;
+            display: none;
+        }
+        
+        a:hover span {
+            display: block;
+        }
+        
+        a span:first-child {
+            left: 0;
+            top: 0;
+            border: none;
+            border-left: 2px solid red;
+            border-top: 2px solid red;
+        }
+        /* 伪类选择器   :hover  :active */
+        /* a:link {
+            color: black;
+        } */
+        
+        a:hover {
+            color: red;
+            background-color: green;
+            background-image: url("./images/13-0.png");
+        }
+        
+        a:active {
+            color: blue;
+        }
+        /* a:visited {
+            color: grey;
+        } */
+    </style>
+</head>
+
+<body>
+    123<a href="http://www.baidu.com">百度</a>
+    <hr>
+    <a href="display.html" target="_blank">display(新窗口打开)</a>
+    <hr>
+    <a href="#xxx">超链接锚点</a>
+    <hr> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <!-- <a name="xxx"></a> -->
+    <div id="xxx"></div>
+    锚点位置
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <br> 123
+    <hr>
+    <a href="javascript:;">
+        <span></span> 测试超链接
+        <span></span>
+    </a>
+    <br> 123
+    <br>
+</body>
+
+</html>

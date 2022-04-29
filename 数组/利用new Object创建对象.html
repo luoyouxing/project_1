@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//利用 new object 创建对象
+			var obj=new Object();//创建了一个空对象
+			obj.uname='1223';
+			obj.age=18;
+			obj.sex='1';
+			obj.say=function(){
+				console.log('hi')
+			}
+			obj.an=function(){
+				var a='123456'
+				return a
+			}
+			console.log(obj.uname)
+			console.log(obj['age'])
+			obj.say();
+			console.log(obj.an())
+		</script>
+	</body>
+</html>

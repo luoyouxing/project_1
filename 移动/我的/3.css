@@ -1,0 +1,138 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 100px;
+}
+
+.top {
+	height: 0.9rem;
+	text-align: center;
+	line-height: 0.9rem;
+	font-size: 0.36rem;
+	background-color: #ff5e46;
+	width: 7.5rem;
+	color: white;
+	position: fixed;
+	z-index: 999;
+}
+
+.center {
+	width: 7.5rem;
+	height: 0.85rem;
+	line-height: 0.8rem;
+	position: fixed;
+	z-index: 999;
+	top: 0.9rem;
+	background-color: white;
+}
+
+.center ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	border-bottom: 0.01rem solid #eeeeee;
+}
+
+.center ul li {
+	font-size: 0.32rem;
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.center ul .on {
+	width: 0.62rem;
+	height: 0.03rem;
+	background-color: #ff5e46;
+}
+
+.bottom {
+	font-size: 0.28rem;
+	width: 7.5rem;
+	position: absolute;
+	top: 2rem;
+}
+
+.bottom ul {
+	width: 7.1rem;
+	margin: auto;
+	border: 0.01rem solid #EEEEEE;
+	border-radius: 0.1rem;
+}
+
+.bottom li {
+	height: 2.9rem;
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	border: 0.01rem solid #EEEEEE;
+	border-radius: 0.1rem;
+	margin-bottom: 0.3rem;
+}
+
+.top1 {
+	width: 6.7rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.down {
+	width: 6.7rem;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	align-items: center;
+}
+
+.xie {
+	width: 4.5rem;
+	height: 1.7rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+}
+
+.bottom img {
+	height: 2rem;
+	width: 2rem;
+	border-radius: 0.1rem;
+}
+
+.a1 {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.jiage {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#en {
+	width: 1.3rem;
+	height: 0.5rem;
+	background-color: #ff5e46;
+	border-radius: 0.5rem;
+	line-height: 0.5rem;
+	text-align: center;
+	color: white;
+	font-size: 0.22rem;
+}
+
+@media screen and (max-width:375px) {
+	html {
+		font-size: 50px;
+	}
+}

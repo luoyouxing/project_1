@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="/find" method="post">
+			按名字查询：<input type="text" name="name"/>
+			<input type="submit" value="查询" />
+			<a href="/">点击返回</a>
+		</form>
+		<table border="1">
+			<tr>
+				<td>姓名</td>
+				<td>性别</td>
+				<td>学号</td>
+				<td>爱好</td>
+			</tr>
+			<tr>
+				<td>{{obj.name}}</td>
+				<td>{{obj.sex}}</td>
+				<td>{{obj.age}}</td>
+				<td>{{obj.hobbies}}</td>
+		</table>
+	</body>
+</html>

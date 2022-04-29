@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../jquery-1.7.2.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.center {
+				position: relative;
+				width: 200px;
+				height: 150px;
+				margin-top: 20px;
+				overflow: hidden;
+			}
+
+			.center ul {
+				list-style: none;
+				width: 1000px;
+				height: 150px;
+			}
+
+			.center ul li {
+				float: left;
+				width: 200px;
+				height: 100%;
+			}
+
+			.btnLeft,
+			.btnRight {
+				width: 20px;
+				height: 20px;
+				background-color: #9E9E9E;
+				border-radius: 20%;
+				opacity: 80%;
+				position: absolute;
+				/*包含块为图片显示层container*/
+				top: 0;
+				bottom: 0;
+				margin: auto;
+				font-size: 20px;
+				color: #f40;
+				text-align: center;
+				line-height: 20px;
+			}
+
+			.btnLeft {
+
+				left: 10px;
+			}
+
+			.btnRight {
+				right: 10px;
+			}
+
+			#dian {
+				position: absolute;
+				float: right;
+				width: 70px;
+				height: 20px;
+				left: 60px;
+				bottom: 0;
+
+			}
+
+			#dian li {
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				float: left;
+				margin: 0 2px;
+			}
+
+			/* #dian::after {
+				content: "";
+				display: block;
+				clear: both;
+			} */
+
+			.on {
+				background-color: red;
+			}
+
+			.off {
+				background-color: gray;
+			}
+
+			img {
+				width: 200px;
+				height: 150px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="center">
+			<ul>
+				<li><img src="1.jpg"></li>
+				<li><img src="2.jpg"></li>
+				<li><img src="3.jpg"></li>
+				<li><img src="4.jpg"></li>
+				<li><img src="5.jpg"></li>
+			</ul>
+			<div class="btnLeft">&lt;</div>
+			<div class="btnRight">&gt;</div>
+			<ul id="dian">
+				<li class="on"></li>
+				<li class="off"></li>
+				<li class="off"></li>
+				<li class="off"></li>
+				<li class="off"></li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			var lis=document.getElementsByClassName("center")[0].getElementsByTagName("ul")[0].getElementsByTagName("li")//获取图片的li
+			// var lis = $(".center ul:nth-child(1) li")
+			console.log(lis)
+			var points=document.getElementById("dian").getElementsByTagName("li")//获取小圆点的li
+			// var points = $(".center #dian li")
+			console.log(points)
+			// var p=$(".center ul").eq(1)
+			// console.log(p)
+			var btnLeft=document.getElementsByClassName("btnLeft")[0]
+			console.log(btnLeft)
+			var btnRight=document.getElementsByClassName("btnRight")[0]
+		</script>
+	</body>
+</html>

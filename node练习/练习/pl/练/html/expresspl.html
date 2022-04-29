@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			form{
+				position: relative;
+			}
+			textarea{
+				vertical-align: middle;
+				/* 行内-块状元素的上下对齐方式 */
+				height: 100px;
+				width: 170px;
+				resize: none;
+				/* 禁止用户缩放 */
+				outline: none;
+				/* 清除焦点状态的边框 */
+				font-size: 15px;
+				font-family: "宋体";
+			}
+		</style>
+	</head>
+	<body>
+		<form action="/post" method="post">
+			<input type="text" name="name" required/><br />
+			<textarea name="txt"></textarea>
+			<input type="submit" value="评论" />
+		</form>
+		<ul>
+		{{each arr v i}}
+			<li>{{v.name}}说：{{v.txt}}</li>
+			{{/each}}
+		</ul>
+	</body>
+</html>

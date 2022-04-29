@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.a {
+				background-color: #C0C0C0;
+				height: 200px;
+				width: 200px;
+			}
+
+			input {
+				width: 190px;
+				height: 30px;
+				font-size: 15px;
+				margin-top: 18px;
+			}
+
+			.a1 {
+				font-size: 13px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="a">
+			<input type="text" name="eml" placeholder="请输入邮箱号" /><br><span class="a1" id="b">请按正确格式输入邮箱号；例如3271874718@qq.com</span>
+			<input type="text" name="phe" placeholder="请输入电话号码" /><br><span class="a1" id="c">请按正确格式输入电话号码</span>
+		</div>
+		<script type="text/javascript">
+			var inp = document.getElementsByTagName("input")
+			var eml = document.getElementsByName("eml")[0]
+			var phe = document.getElementsByName("phe")[0]
+			var sp = document.getElementById("b")
+			var spa = document.getElementById("c")
+			eml.onblur = function() {
+				var email = /^[0-9a-z_-]{6,12}@[0-9a-z]{2,3}(\.(com|cn))+$/ig
+				if (email.test(inp[0].value)) {
+					sp.innerHTML = "邮箱号输入正确"
+					sp.style.color = "green"
+				} else {
+					sp.innerHTML = "邮箱号输入不合规范,请重新输入"
+					sp.style.color = "red"
+				}
+			}
+			phe.onblur = function() {
+				var phone = /^1[3-9]{1}[0-9]{9}$/
+				if (!phone.test(inp[1].value)) {
+					spa.innerHTML = "电话号码输入错误"
+					spa.style.color = "red"
+				} else {
+					spa.innerHTML = "电话号码输入正确"
+					spa.style.color = "green"
+				}
+			}
+		</script>
+	</body>
+</html>

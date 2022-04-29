@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			for (i = 0; i < 4; i++) {
+				for (j = 1; j < 5 - i; j++) {
+					document.write("＊")
+				}
+				document.write("<br />")
+			}
+			document.write("<hr />")
+			for (i = 0; i < 4; i++) {
+				for (j = 0; j < i + 1; j++) {
+					document.write("＊")
+				}
+				document.write("<br />")
+			}
+			document.write("<hr />")
+			for (i = 0; i < 4; i++) {
+				for (z = 0; z < 4 - i - 1; z++) {
+					document.write("　")
+				}
+				for (j = 0; j < 2 * i + 1; j++) {
+					document.write("＊")
+				}
+				document.write("<br />")
+			}
+			document.write("<hr />")
+			for (i = 0; i <=3; i++) {
+				for (z = 0; z <=3 - i - 1; z++) {
+					document.write("　")
+				}
+				for (j = 0; j < 2 * i + 1; j++) {
+					document.write("＊")
+				}
+				document.write("<br />")
+			}
+			for (i = 0; i <3; i++) {
+				for (z = 0; z <= i; z++) {
+					document.write("　")
+				}
+				for (j = 0; j < 6 - 2 * i - 1; j++) {
+					document.write("＊")
+				}
+				document.write("<br />")
+			}
+			// for (j = 2*i+1; j>0 ; j--) {
+			// 	document.write("*")
+			// }
+			document.write("<br />")
+		</script>
+	</body>
+</html>

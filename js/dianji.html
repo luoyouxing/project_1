@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#b {
+				width: 500px;
+				height: 500px;
+				border: 2px solid #00FFFF;
+				position: relative;
+			}
+
+			#a {
+				width: 80px;
+				height: 80px;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="b">
+			<div id="a">
+			</div>
+			<button type="button" onclick="an1()">开始</button>
+			<button type="button" onclick="an()">暂停</button>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var p
+		var o = document.getElementById("a")
+		// function an1() {
+			p = setInterval(function() {
+				var x = Math.round(Math.random() * 256)
+				var y = Math.round(Math.random() * 256)
+				var z = Math.round(Math.random() * 256)
+				var m = (Math.random() * 420) + "px"
+				var n = (Math.random() * 420) + "px"
+				o.style.left = m
+				o.style.top = n
+				o.style.backgroundColor = "rgb(" + x + "," + y + "," + z + ")"
+			}, 100)
+		// }
+
+		function an() {
+			clearInterval(p)
+		}
+	</script>
+</html>

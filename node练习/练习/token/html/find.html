@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+	</head>
+	<body>
+		<form action="/find" method="post" enctype="multipart/form-data">
+			<input type="text" name="name" placeholder="按产品名查找" />
+			<input type="submit" value="查找" />
+		</form>
+		<table border="1">
+			<tr>
+				<th>图片</th>
+				<th>产品名</th>
+				<th>库存</th>
+				<th>价格</th>
+				<th>分类</th>
+			</tr>
+			<tr>
+				<td><img src="{{obj.pic}}"></td>
+				<td>{{obj.name}}</td>
+				<td>{{obj.num}}</td>
+				<td>{{obj.money}}</td>
+				<td>
+					{{each obj.classify}}
+					{{$value==1?"推荐":""}}
+					{{$value==2?"热门":""}}
+					{{$value==3?"折扣":""}}
+					{{/each}}
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

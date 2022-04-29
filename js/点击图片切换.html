@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			ul {
+				list-style: none;
+			}
+
+			li {
+				position: absolute;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="position: relative;">
+			<button onclick="a()">1</button>
+			<button onclick="b()">2</button>
+			<button onclick="c()">3</button>
+			<ul>
+				<li id="x"><img src="../123/images/123-02.jpg" ></li>
+				<li id="y"><img src="../123/images/123.jpg"></li>
+				<li id="z"><img src="../123/images/1首页_08.jpg" ></li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			function a() {
+				document.getElementById("x").style.display="block";
+				document.getElementById("y").style.display="none";
+				document.getElementById("z").style.display="none";
+			}function b() {
+				document.getElementById("x").style.display="none";
+				document.getElementById("y").style.display="block";
+				document.getElementById("z").style.display="none";
+			}function c() {
+				document.getElementById("x").style.display="none";
+				document.getElementById("y").style.display="none";
+				document.getElementById("z").style.display="block";
+			}
+		</script>
+	</body>
+</html>

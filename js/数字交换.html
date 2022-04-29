@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var a="张三",b="19",c="180cm";
+			document.write("&nbsp;&nbsp;"+a+"<br>")
+			document.write("&nbsp;&nbsp;"+b+"<br>")
+			document.write("&nbsp;&nbsp;"+c+"<br>")
+			var a = 2,b = 2,c = 5;
+			document.write((a + b + c) / 3+"<br>")
+			var s1="蓝",s2="红",x;
+			x=s1;
+			s1=s2;
+			s2=x;
+			console.log(s1+s2)
+		</script>
+		<div id="a"></div>
+		<div id="b"></div>
+		<script type="text/javascript">
+			var person ={
+				name:'张三',
+				age:19,
+				height:"180cm"
+			};
+			document.getElementById("a").innerHTML=person.name+"<br>"+person.age+"<br>"+person.height+"<br>";
+			var yunsuan={
+				a:2,b:5,c:8,
+				z:function(){
+					return this.a+this.b+this.c;
+				}
+			};	
+			document.getElementById("b").innerHTML=yunsuan.z();
+		</script>
+	</body>
+</html>

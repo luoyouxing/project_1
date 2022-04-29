@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var atb = document.createElement('table');
+		document.body.appendChild(atb);
+		//创建表名字
+		var os = document.createElement('caption');
+		atb.appendChild(os);
+		os.innerHTML = ('学生信息表');
+				//创建表头
+				var ot = document.createElement('thead'); atb.appendChild(ot);
+				//添加tr
+				var or = document.createElement('tr'); ot.appendChild(or);
+				//添加tr内容th
+				//内容th编号
+				var th1 = document.createElement('th'); th1.innerHTML = ('编号'); or.appendChild(th1);
+				//内容th姓名
+				var th2 = document.createElement('th'); th2.innerHTML = ('姓名'); or.appendChild(th2);
+				//内容th年龄
+				var th3 = document.createElement('th'); th3.innerHTML = ('年龄'); or.appendChild(th3);
+				//内容th操作
+				var th4 = document.createElement('th'); th4.innerHTML = ('操作'); or.appendChild(th4);
+				//创建主体
+				var op = document.createElement('tbody'); atb.appendChild(op);
+				//输出行号
+				//定义输出10行
+				for (i = 0; i < 10; i++) {
+					//添加tr
+					var rr = document.createElement('tr');
+					op.appendChild(rr);
+					//添加th1
+					var oth1=document.createElement('th');
+					rr.appendChild(oth1);
+					oth1.innerHTML = ('1000');
+					var oth2 = document.createElement('th');
+					rr.appendChild(oth2);
+					oth2.innerHTML = ('张三');
+					//添加th3
+					var oth3 = document.createElement('th');
+					rr.appendChild(oth3);
+					oth3.innerHTML = ('20');
+					//添加th4
+					var oth4 = document.createElement('th');
+					rr.appendChild(oth4);
+					var och = document.createElement('a');
+					och.innerHTML = ('删除');
+					//删除创建的表格
+					och.onclick = function() {
+						var s = this.parentNode.parentNode;
+						s.parentNode.removeChild(s);
+					}
+					oth4.appendChild(och);
+				}
+	</script>
+
+	</script>
+</html>

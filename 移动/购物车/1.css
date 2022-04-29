@@ -1,0 +1,109 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 100px;
+}
+
+.top {
+	height: 0.9rem;
+	text-align: center;
+	line-height: 0.9rem;
+	font-size: 0.36rem;
+	background-color: #ff5e46;
+	position: fixed;
+	width: 7.5rem;
+	z-index: 999;
+	/* top: 0rem; */
+	color: white;
+}
+
+.center {
+	position: absolute;
+	top: 0.9rem;
+	font-size: 0.28rem;
+}
+
+.center ul {
+	margin: 0 0.4rem;
+}
+
+.center ul li {
+	position: relative;
+	list-style: none;
+	margin: 0.2rem 0;
+	width: 6.7rem;
+}
+
+.center img {
+	width: 2.2rem;
+	height: 2.2rem;
+}
+
+.shangpin {
+	position: absolute;
+	top: 0.2rem;
+	left: 2.5rem;
+	color: #666666;
+}
+
+form {
+	position: absolute;
+	bottom: 0.7rem;
+	left: 2.5rem;
+}
+
+.center select {
+	width: 0.95rem;
+	height: 0.3rem;
+	background-color: #eeeeee;
+	color: #999999;
+	font-size: 0.2rem;
+	border: none;
+	border-radius: 0.05rem;
+	/* text-align: center; */
+}
+
+.jiage {
+	position: absolute;
+	bottom: 0.2rem;
+	left: 2.45rem;
+	font-size: 0.32rem;
+	color: #ff5e46 ;
+}
+.botton1{
+	position: absolute;
+	bottom: 0.2rem;
+	right: 0rem;
+}
+.botton1 button{
+	width: 0.4rem;
+	height: 0.4rem;
+	font-size: 0.32rem;
+}
+.botton1 input{
+	height: 0.36rem;
+	width: 0.8rem;
+	font-size: 0.32rem;
+	text-align: center;
+}
+/* .quanxuan{
+	position: fixed;
+	height: 0.9rem;
+	background-color:white;
+	border-top: 0.01rem solid #CCCCCC;
+	border-bottom: 0.01rem solid #B2B2B2;
+	bottom: 0.85rem;
+	width: 7.5rem;
+}
+.quanxuan span{
+	line-height: 0.9rem;
+	font-size: 0.32rem;
+} */
+@media screen and (max-width:375px) {
+	html {
+		font-size: 50px;
+	}
+}

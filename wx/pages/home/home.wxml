@@ -1,0 +1,41 @@
+<view class="top">
+  <text class="iconfont icon-Magnifier"></text>
+  <input type="text" placeholder="满天星" />
+</view>
+<view class="center">
+  <swiper indicator-dots="true" indicator-active-color="#666" autoplay="true" circular="true" interval="2000">
+    <swiper-item>
+      <image src="../../index/1.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="../../index/10.jpg"></image>
+    </swiper-item>
+  </swiper>
+  <view class="tupian">
+    <ul>
+      <li wx:for="{{images}}" wx:key="key">
+        <image src="{{item.pic}}"></image>
+        <text>{{item.text}}</text>
+      </li>
+    </ul>
+  </view>
+  <view class="gouwu">
+    <ul>
+      <li wx:for="{{ar}}" wx:key="key">
+        <image src="{{item.pic}}"></image>
+        <view class="bottom_1">
+          <view class="jia">
+            <text class="a1">{{item.text}}</text>
+            <text class="a2">{{item.price}}</text>
+            <text class="a3">{{item.num}}</text>
+          </view>
+          <view class="bottom_2">
+            <view class="bottom_2_1">
+              <text class="iconfont icon-021shoutidai"></text>
+            </view>
+          </view>
+        </view>
+      </li>
+    </ul>
+  </view>
+</view>

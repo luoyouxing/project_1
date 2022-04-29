@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.a {
+				width: 400px;
+				height: 400px;
+				border: 1px solid #00FFFF;
+				top: 150px;
+				position: relative;
+				overflow: hidden;
+			}
+
+			div {
+				width: 20px;
+				height: 20px;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="a">
+		</div>
+		<script type="text/javascript">
+			var a = document.getElementsByClassName("a")[0]
+			setInterval(function() {
+				var res = document.createElement("div")
+				var one = res.style.top = -50 + "px"
+				res.style.backgroundColor = "greenyellow"
+				a.appendChild(res)
+				var m = (-(Math.random() * 100)+parseInt(one)) + "px"
+				var n = (Math.random() * 350) + "px"
+				res.style.top = m
+				res.style.left = n
+				as(res)
+			}, 1500)
+			function as(val){
+				var move=setInterval(function(){
+					val.style.top = parseInt(val.style.top) + 1 + "px"
+					if (parseInt(val.style.top) > 400) {
+						clearInterval(move);
+						a.removeChild(val)
+					}
+				},8)
+				console.log(val)
+			}
+			// setInterval(function() {
+			// 	var m = (Math.random() * 100) + "px"
+			// 	var n = (Math.random() * 400) + "px"
+			// 	b.style.top = m
+			// 	b.style.left = n
+			// }, 2000)
+		</script>
+	</body>
+</html>

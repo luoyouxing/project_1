@@ -1,0 +1,30 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 100px;
+}
+
+.jingpin1 ul {
+	display: flex;
+	list-style-type: none;
+	justify-content: space-around;
+}
+
+.jingpin ul li {
+	display: flex;
+	justify-content: center;
+	flex-flow: column;
+}
+
+#p1 {
+	/* font-size: 20px; */
+	font-size: 0.2rem
+}
+
+#p2 {
+	font-size: .28rem
+		/* font-size: 28px; */
+}

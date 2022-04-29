@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="font_c1llq0x9uor/iconfont.css">
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			html {
+				font-size: 100px;
+			}
+
+			.b2 ul {
+				display: flex;
+				list-style: none;
+				flex-wrap: wrap;
+				/* align-content: space-between; */
+				justify-content: space-around;
+
+			}
+
+			.b2 li {
+				margin-bottom: .2rem;
+				background-color: #ffffff;
+				position: relative;
+			}
+
+			.b2 img {
+				height: 3.44rem;
+				width: 3.4rem;
+			}
+
+			.b3 {
+				font-size: .28rem;
+			}
+
+			.b4 {
+				font-size: .24rem;
+				color: #909090;
+			}
+
+			.b5 {
+				margin-top: .20rem;
+				font-size: .24rem;
+				color: #f08c29;
+			}
+
+			.c {
+				background-color: #ffffff;
+				font-size: .24rem;
+			}
+
+			.c ul {
+				display: flex;
+				list-style: none;
+				/* flex-wrap: wrap; */
+				/* align-content: space-between; */
+				justify-content: space-around;
+			}
+
+			.c li {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.c ul li .iconfont {
+				font-size: .5rem;
+			}
+
+			.b2 ul li .iconfont {
+				display: flex;
+				font-size: .45rem;
+			}
+
+			.a {
+				position: absolute;
+				bottom: 0;
+				right: 0;
+			}
+
+			ul>li:hover p,
+			ul>li:hover a,
+			ul>li:hover span {
+				color: #00FFFF;
+			}
+
+			a {
+				text-decoration: none;
+				color: inherit;
+			}
+
+			li,
+			p,
+			span {
+				cursor: pointer;
+			}
+
+			#en {
+				color: #00FFFF;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<div class="b2">
+				<ul>
+					<li><img src="../../../images/移动/2.jpg" alt="">
+						<p class="b3">玫瑰花葡萄新鲜水果...</p>
+						<p class="b4">已售5213箱</p>
+						<p class="b5">￥80.00</p><span class="a iconfont icon-tianjia"></span>
+					</li>
+					<li><img src="../../../images/移动/2.jpg" alt="">
+						<p class="b3">玫瑰花葡萄新鲜水果...</p>
+						<p class="b4">已售5213箱</p>
+						<p class="b5">￥90.00</p><span class="a iconfont icon-tianjia"></span>
+					</li>
+					<li><img src="../../../images/移动/2.jpg" alt="">
+						<p class="b3">玫瑰花葡萄新鲜水果...</p>
+						<p class="b4">已售5213箱</p>
+						<p class="b5">￥100.00</p><span class="a iconfont icon-tianjia"></span>
+					</li>
+					<li><img src="../../../images/移动/2.jpg" alt="">
+						<p class="b3">玫瑰花葡萄新鲜水果...</p>
+						<p class="b4">已售5213箱</p>
+						<p class="b5">￥110.00</p><span class="a iconfont icon-tianjia"></span>
+					</li>
+				</ul>
+			</div>
+			<div class="c">
+				<ul>
+					<li><a href="首页.html"><span class="iconfont icon-shouye" id="en"></span></a><a id="en" href="首页.html">首页</a></li>
+					<li><a href="购物车.html"><span class="iconfont icon-gouwuche"></span></a><a href="购物车.html">购物车</a></li>
+					<li><span class="iconfont icon-gouwuche"></span>
+						<p>我的</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var spans = document.getElementsByClassName("a")
+			// console.log(spans)
+			// var li = document.getElementsByTagName("li")
+			// console.log(li)
+			var img = document.getElementsByTagName("img")
+			// console.log(img.src)
+			var p = document.getElementsByClassName("b3")
+			var p1 = document.getElementsByClassName("b5")
+			var arr = []
+			for (var i = 0; i < spans.length; i++) {
+				spans[i].index = i //记下标
+				spans[i].onclick = function() {
+					if (localStorage.getItem("shop") != null) {
+						arr = JSON.parse(localStorage.getItem("shop"))//把json字符串转换成对应的数组或对象
+					}
+					var shop = {
+						img: img[this.index].src,
+						name: p[this.index].innerHTML,
+						price: p1[this.index].innerHTML,
+						num: 1
+					}
+					var bool = arr.some(function(v, i) {
+						console.log(v)
+						return v.price == shop.price
+					})
+
+					if (bool) {
+						var res = arr.findIndex(function(n, i) {
+							return n.price == shop.price
+						})
+						arr[res].num++
+					} else {
+						arr.push(shop)
+					}
+					//把数据存入数组
+					console.log(shop)
+					// console.log(JSON.stringify(shop))
+					localStorage.setItem("shop", JSON.stringify(arr)) //放入本地存储
+					console.log(localStorage.getItem("shop"))
+					// JSON.parse() 把json字符串转换成对应的数组或对象
+					// JSON.stringify() 把数组或对象转换成对应的json字符串
+				}
+				arr = []
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#a {
+				background-color: #00FFFF;
+			}
+			button{
+				position: absolute;
+				left: 7px;
+				top: 120px;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="a" width="200px" height="100px" onclick="btn()"></canvas>
+		<button onclick="btn()">看不清，换一个！！！</button>
+		<script type="text/javascript">
+			var a = document.getElementById("a")
+			var obj = a.getContext("2d")
+			var s = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+			an();//调用函数
+
+			function btn() {
+				an();
+			}
+
+			function an() {
+				obj.clearRect(0, 0, 200, 100)
+				for (var i = 0; i < 40; i++) {
+					obj.fillStyle = "rgba(" + Math.round(Math.random() * 225) + "," + Math.round(Math.random() * 225) + "," + Math.round(
+						Math.random() * 225) + ")"//随机颜色
+					obj.arc(Math.random() * 200, Math.random() * 100, 2, 0, 2 * Math.PI, false)//随机画圆
+					obj.fill()
+					obj.beginPath()
+				}
+				for (var i = 0; i < 2; i++) {//随机三角形
+					var c = Math.round(Math.random() * 200)
+					var n = Math.round(Math.random() * 100)
+					obj.moveTo(c, n)
+					obj.lineTo(Math.round(Math.random() * 200), Math.round(Math.random() * 100))
+					obj.lineTo(Math.round(Math.random() * 200), Math.round(Math.random() * 100))
+					obj.lineTo(c, n)
+					obj.fillStyle = "rgba(" + Math.round(Math.random() * 225) + "," + Math.round(Math.random() * 225) + "," + Math.round(
+						Math.random() * 225) + ")"
+					obj.fill()
+					obj.beginPath()
+				}
+				for (var i = 0; i < 10; i++) {//随机画线
+					var c = Math.round(Math.random() * 200)
+					var n = Math.round(Math.random() * 100)
+					obj.moveTo(c, n)
+					obj.lineTo(Math.round(Math.random() * 200), Math.round(Math.random() * 100))
+					obj.strokeStyle = "rgba(" + Math.round(Math.random() * 225) + "," + Math.round(Math.random() * 225) + "," + Math.round(
+						Math.random() * 225) + ")"
+					obj.stroke()
+					obj.beginPath()
+				}
+
+				for (var i = 0; i < 4; i++) {//生成随机数
+					obj.font = "30px 楷体"
+					obj.strokeStyle = "rgba(" + Math.round(Math.random() * 225) + "," + Math.round(Math.random() * 225) + "," + Math.round(
+						Math.random() * 225) + ")"
+					obj.strokeWidth = "1"
+					var y=Math.round(Math.random() *100)
+					while(y>80||y<20){//判断y的范围
+						y=Math.round(Math.random() *100)
+					}
+					obj.strokeText(s[Math.floor(Math.random() * s.length)], Math.round(Math.random() * 180), y)
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			table {
+				border-collapse: collapse;
+			}
+
+			td {
+				width: 80px;
+			}
+
+			td,
+			table {
+				border: 1px solid #00FFFF;
+				text-align: center;
+			}
+
+			.a1 {
+				width: 30px;
+			}
+
+			img {
+				width: 100%;
+				vertical-align: middle;
+			}
+
+			.bto {
+				width: 40px;
+				margin: 0 2px;
+			}
+
+			button {
+				width: 13px;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td style="width: 30px;"></td>
+				<td>商品</td>
+				<td>商品名称</td>
+				<td>单价</td>
+				<td>数量</td>
+				<td>商品价格</td>
+				<td>操作</td>
+			</tr>
+		</table>
+		<table height="40px">
+			<tr>
+				<td class="a1"><input type="checkbox" /></td>
+				<td>全选</td>
+				<td style="width: 323px;">总价：￥0.00</td>
+				<td>去结算</td>
+			</tr>
+		</table>
+		<script type="text/javascript">
+			var table = document.getElementsByTagName("table")[0]
+			var tr = document.getElementsByTagName("tr")[0]
+			var an = JSON.parse(localStorage.getItem("shop")) //|| []
+			var emm = []
+			console.log(emm)
+			if (localStorage.length > 0) {
+				for (var i = 0; i < an.length; i++) {
+					emm += "<tr><td  class='a1'><input type='checkbox' class='check'/></td><td><img src='" +
+						an[i].img +
+						"'></td><td>" + an[i].name + "</td><td>" + an[i].price +
+						"</td><td><button onclick='jian(" + i +
+						")'>-</button><input type='text' value=" + an[i].num + " class='bto'/><button onclick='jia(" + i +
+						")'>+</button></td><td class='prices'>" + "￥" + (an[i].price.replace("￥", "") * an[i].num).toFixed(2) +
+						" </td><td class='delete'>删除</td></tr>"
+					table.innerHTML = tr.innerHTML + emm
+				}
+			}
+		</script>
+	</body>
+</html>

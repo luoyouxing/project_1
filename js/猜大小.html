@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			var y
+			var x
+			for (x = 0; x < 3; x++) {
+				var z = Math.round(Math.random() * 10)
+				function a() {
+					y = Number(prompt("猜0-10之间的数"));
+					while (y) {
+						if (y > z) {
+							y = Number(prompt("猜大了"))
+						} else if (y < z) {
+							y = Number(prompt("猜小了"))
+						} else {
+							break;
+						}
+					}
+					if (y) {
+						alert("猜对了")
+					} else {
+						alert("请输入数字")
+						a()
+					}
+				}
+				a()
+			}
+			alert("您已经不可以玩了，读书去")
+		</script>
+	</body>
+</html>

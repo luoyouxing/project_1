@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .te {
+            height: 200px;
+            width: 200px;
+            background-color: blue;
+            position: relative;
+            animation: move1 2s linear 1 alternate;
+        }
+        
+        @keyframes move1 {
+            0% {
+                top: 0px;
+                left: 0px;
+                transform: none;
+                /* background: red; */
+            }
+            /* 50% {
+                top: 0px;
+                left: 1000px;
+            } */
+            100% {
+                top: 0px;
+                left: 1000px;
+            }
+        }
+        
+        .ta {
+            height: 200px;
+            width: 200px;
+            background-color: blue;
+            border-radius: 100px;
+            position: relative;
+            animation: move 2s linear 1 alternate-reverse;
+        }
+        
+        @keyframes move {
+            0% {
+                transform: none;
+                background: red;
+            }
+            50% {
+                transform: translate(0, 200px);
+                background: red;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="te">
+        <div class="ta">
+        </div>
+    </div>
+
+</body>
+
+</html>

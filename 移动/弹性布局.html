@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ta {
+            width: 160px;
+            height: 160px;
+            background-color: aqua;
+            display: flex;
+            padding: 20px;
+            justify-content: space-between;
+        }
+        
+        .ta>div {
+            width: 50px;
+            height: 50px;
+            border-radius: 40px;
+            background-color: cadetblue;
+        }
+        
+        .ta>div:nth-child(2) {
+            align-self: center;
+        }
+        
+        .ta>div:nth-child(3) {
+            align-self: flex-end;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ta">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <hr>
+    <div class="sitong">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <style>
+        /* .sitong {
+            width: 160px;
+            height: 160px;
+            background-color: aqua;
+            display: flex;
+            padding: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .sitong>div {
+            width: 40px;
+            height: 40px;
+            border-radius: 40px;
+            background-color: cadetblue;
+            margin: 20px;
+        }
+         */
+        
+        .sitong {
+            width: 160px;
+            height: 160px;
+            background-color: aqua;
+            display: flex;
+            padding: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            /* align-content: space-between; */
+        }
+        
+        .sitong>div {
+            width: 60px;
+            height: 60px;
+            border-radius: 40px;
+            background-color: cadetblue;
+        }
+        
+        .wutong {
+            width: 180px;
+            height: 180px;
+            background-color: aqua;
+            display: flex;
+            padding: 10px;
+        }
+        
+        .wutong1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .wutong2 {
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+        }
+        
+        .wutong3 {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .wutong1>div {
+            width: 60px;
+            height: 60px;
+            border-radius: 40px;
+            /* flex-direction: column; */
+            background-color: cadetblue;
+        }
+        
+        .wutong2>div {
+            width: 60px;
+            height: 60px;
+            border-radius: 40px;
+            background-color: cadetblue;
+        }
+        
+        .wutong3>div {
+            width: 60px;
+            height: 60px;
+            border-radius: 40px;
+            background-color: cadetblue;
+        }
+    </style>
+    <hr>
+    <div class="wutong">
+        <div class="wutong1">
+            <div></div>
+            <div></div>
+        </div>
+        <div class="wutong2">
+            <div></div>
+        </div>
+        <div class="wutong3">
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</body>
+
+</html>
