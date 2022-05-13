@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<router-view></router-view>
-		<ul class="bottom">
+		<ul class="bottom" v-if="!$route.meta.showFooter">
 			<!-- <li v-for="v,i in arr" :key="i">
 				<span :class="v.ref"></span>
 				<router-link :to="v.id">{{v.text}}</router-link>
@@ -83,7 +83,7 @@
 	.top {
 		background-color: #EEEEEE;
 		width: 7.5rem;
-		position: fixed;
+		/* position: fixed; */
 	}
 
 	.top_1 {

@@ -1,2 +1,7 @@
 <!--pages/shop/shop.wxml-->
-<text>pages/shop/shop.wxml</text>
+<camera></camera>
+
+<button bindtap="dian">点击</button>
+
+<video id="asd" src="{{video}}"></video>
+<button bindtap="play">play</button>

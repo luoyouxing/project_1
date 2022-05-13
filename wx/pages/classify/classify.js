@@ -1,3 +1,5 @@
+let app = getApp() //获取全局app实例
+let mokuai = require("../../mokuai.js") //加载模块内容
 // pages/classify/classify.js
 Page({
 
@@ -5,12 +7,45 @@ Page({
    * 页面的初始数据
    */
   data: {
-    bool:true,
-    meg:"123456"
+    bool: false,
+    meg: "123456",
+    num: "1",
+    arr: "123456",
+    xiala:true
   },
-  zujian(val){ //用形参val接收子组件传过来的值
+  add() {
     this.setData({
-      meg:val.detail
+      arr: "0123456789abcdefghi",
+      xiala: false
+    })
+  },
+  turn(val) {
+    //读取全局app内容
+    console.log(app)
+    console.log(app.a)
+    console.log(app.b)
+
+    //读取模块内容
+    console.log(mokuai.obj.a)
+    mokuai.obj.b()
+
+    //读取事件的传值
+    console.log(val.target.dataset)
+    console.log(val.currentTarget.dataset)
+
+    console.log(this.data.bool)
+    this.setData({
+      bool: !this.data.bool
+    })
+  },
+  maopao(val) {
+    console.log(val)
+    console.log(val.target.dataset) //获取底层元素上绑定的数据
+    console.log(val.currentTarget.dataset) //获取当前元素上绑定的数据
+  },
+  zujian(val) { //用形参val接收子组件传过来的值
+    this.setData({
+      meg: val.detail
     })
   },
 
@@ -32,7 +67,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    setInterval(() => {
+      this.setData({
+        num: this.data.num >= 100 ? 1 : this.data.num + 1
+      })
+    }, 1000)
   },
 
   /**

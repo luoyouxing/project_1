@@ -32,7 +32,9 @@
 			<div class="huodong" @click="huodong"><img :src="require('../assets/index/10.jpg')">
 			</div>
 			<div class="quan">
-				<img :src="require('../assets/index/11.jpg')">
+				<!-- <img :src="require('../assets/index/11.jpg')" @click="youhui(10)">
+				<img :src="require('../assets/index/12.jpg')" @click="youhui(20)"> -->
+				<div v-for="(v,i) in $store.state.you" :key="i" @click="youhui(i)"><img :src="v.pic" ></div>
 			</div>
 			<div class="wenzi">
 				<p>热卖<span></span></p>
@@ -88,12 +90,24 @@
 				this.$router.push({
 					path:"/huodong"
 				})
+			},
+			youhui(i){
+				console.log(this.$store.state.you[i].pri)
+				this.$router.push({
+					// name:"youhui",
+					path:"/youhui",
+					query:{
+						pri:this.$store.state.you[i].pri,
+						num:this.$store.state.you[i].num,
+					}
+				})
 			}
 		},
 		created() {
 			this.images = this.$store.state.images
 			this.img = this.$store.state.img
 			this.ar = this.$store.state.ar
+			// this.you=this.$store.state.you
 		}
 	};
 </script>
@@ -188,8 +202,8 @@
 	}
 
 	.quan img {
-		width: 7.1rem;
-		height: 2.2rem;
+		width: 3.5rem;
+		height: 2.15rem;
 	}
 
 	.wenzi {

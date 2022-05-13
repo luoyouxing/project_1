@@ -1,5 +1,9 @@
 // app.js
 App({
+  a:123,
+  b(){
+    console.log(this.a)
+  },
   onLaunch() {
     // 展示本地存储能力
     const logs = wx.getStorageSync('logs') || []
@@ -11,6 +15,9 @@ App({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
+    }),
+    wx.cloud.init({
+      env: "project-9gxw1jrn07a19fac"
     })
   },
   globalData: {

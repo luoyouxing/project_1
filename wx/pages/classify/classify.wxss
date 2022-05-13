@@ -1,1 +1,16 @@
 /* pages/classify/classify.wxss */
+.box{
+  width: 600rpx;
+  height: 200rpx;
+  background-color: aquamarine;
+}
+
+.box movable-view{
+  width: 50px;
+  height: 50px;
+  background-color: red;
+}
+
+.scroll{
+  height: 200rpx;
+}

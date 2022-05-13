@@ -1,2 +1,41 @@
 <!--pages/mine/mine.wxml-->
-<text>pages/mine/mine.wxml</text>
+<button bindtap="add">添加数据</button>
+<button bindtap="read">读取数据</button>
+<button bindtap="del">删除数据</button>
+<button bindtap="change">修改数据</button>
+<button bindtap="yunlogin" data-test="测试携带参数">云函数登录</button>
+<button bindtap="yunget" data-obj="{{test}}">云函数获取数据</button>
+<image src="cloud://project-9gxw1jrn07a19fac.7072-project-9gxw1jrn07a19fac-1311831266/13-1.png"></image>
+<button bindtap="downfile">云储存下载</button>
+<button bindtap="upfile">云储存上传</button>
+<button bindtap="delfile">云储存删除</button>
+<view class="box" animation="{{move}}"></view>
+<button bindtap="start">点击位移</button>
+<view>213</view>
+<view>213</view>
+<view>213</view>
+<view>213</view>
+<view>213</view>
+<view>213</view>
+<view>213</view>
+<view>213</view>
+<view>213</view>
+<view>213</view>
+<view>213</view>
+<view>213</view>
+<view>213</view>
+<view>213</view>
+<view>213</view>
+<view>213</view>
+<view>213</view>
+<view>213</view>
+<view>213</view>
+<view>213</view>
+<view>213</view>
+<view>213</view>
+<view>213</view>
+<view>213</view>
+<view>213</view>
+<view>213</view>
+<view>213</view>
+<view>213</view>

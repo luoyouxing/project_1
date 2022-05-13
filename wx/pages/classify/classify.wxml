@@ -6,4 +6,38 @@
 <abc mn="{{meg}}" bindzhi="zujian"></abc>
 <view></view>
 
-<!-- 点击事件传值 -->
+<!-- 绑定点击事件及事件传值 -->
+<view bindtap="maopao" data-sex="男">
+  <button bindtap="turn" data-name="张三" data-age="20">点击切换</button>
+</view>
+<view>-----------------------</view>
+
+<!-- wxs模块 -->
+<wxs src="../../wx.wxs" module="wx"></wxs>
+{{wx.obj.a}}
+
+<!-- 模板：写在页面内的组件
+页面内通过<template name="xxx"></template>创建xxx模板
+通过<template is="xxx"></template>使用xxx模板 -->
+<template is="one" data="{{x:123,y:456}}"></template>
+<template name="one">模板内容--{{x}}--{{y}}</template>
+
+<progress percent="{{num}}" stroke-width="10" />
+
+<rich-text nodes="<b><i><u>文字内容</u></i></b>"></rich-text>
+
+<movable-area class="box">
+  <!-- direction可调节横纵向位移，all所有方向拖动 vertical纵向拖动 horizontal横向拖动 none不可操作 -->
+  <movable-view direction="all" out-of-bounds="{{bool}}" disabled="{{bool}}">
+  </movable-view>
+</movable-area>
+
+<!-- scroll-y 沿y轴滑动
+refresher-enabled 开启自定义下拉刷新
+refresher-triggered 设置当前下拉刷新状态，true 表示下拉刷新已经被触发，false 表示下拉刷新未被触发
+bindrefresherrefresh 自定义下拉刷新被触发 -->
+<scroll-view class="scroll" scroll-y="true" refresher-enabled="true" refresher-triggered="{{xiala}}" bindrefresherrefresh="add">
+  <view wx:for="{{arr}}"  wx:key="item">{{item}}</view>
+</scroll-view>
+
+<!-- 图标点击切换 -->

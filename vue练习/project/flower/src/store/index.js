@@ -36,22 +36,22 @@ export default new Vuex.Store({
 			pic: require("../assets/index/9.jpg")
 		}],
 		ar: [{
-			pic: require("../assets/index/12.jpg"),
+			pic: require("../assets/index/13.jpg"),
 			text: "绣花香 128",
 			pirce: "￥128.00",
 			num: "销量：22",
 		}, {
-			pic: require("../assets/index/13.jpg"),
+			pic: require("../assets/index/14.jpg"),
 			text: "遇见时光遇见你",
 			pirce: "￥198.00",
 			num: "销量：99",
 		}, {
-			pic: require("../assets/index/14.jpg"),
+			pic: require("../assets/index/15.jpg"),
 			text: "芬芳",
 			pirce: "￥326.00",
 			num: "销量：66",
 		}, {
-			pic: require("../assets/index/15.jpg"),
+			pic: require("../assets/index/16.jpg"),
 			text: "晴空万里",
 			pirce: "￥239.00",
 			num: "销量：333",
@@ -160,6 +160,15 @@ export default new Vuex.Store({
 		}, {
 			pic: require("../assets/mine/11.jpg"),
 			text: "购物车",
+		}],
+		you:[{
+			pic:require('../assets/index/11.jpg'),
+			pri:99,
+			num:10
+		},{
+			pic:require('../assets/index/12.jpg'),
+			pri:199,
+			num:20
 		}]
 	},
 	getters: {

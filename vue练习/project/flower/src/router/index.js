@@ -20,10 +20,23 @@ export default new Router({
 	},{
 		path:"/lie",
 		name:"liebiao",
-		component:()=>import('../views/liebiao.vue')
+		component:()=>import('../views/liebiao.vue'),
+		meta:{
+			showFooter:true
+		}
 	},{
 		path:"/huodong",
-		component:()=>import('../views/huodong.vue')
+		component:()=>import('../views/huodong.vue'),
+		meta:{
+			showFooter:true
+		}
+	},{
+		path:"/youhui",
+		name:"youhui",
+		component:()=>import('../views/youhui.vue'),
+		meta:{
+			showFooter:true
+		}
 	}],
 	mode: "history" //修改路由模式变history模式
 })
