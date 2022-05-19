@@ -43,7 +43,7 @@
 					<div class="center2">
 						<div class="center3"><span>我的工具</span></div>
 						<ul style="width: 3.45rem;">
-							<li v-for="v,i in data_2" :key="i"><img :src="v.pic">{{v.text}}</li>
+							<li v-for="v,i in data_2" :key="i" @click="car(i)"><img :src="v.pic">{{v.text}}</li>
 						</ul>
 					</div>
 					<div class="xiao"><span>小程序首页</span>
@@ -63,6 +63,25 @@
 
 	Vue.use(Icon);
 	export default {
+		data() {
+			return {
+
+			}
+		},
+		methods: {
+			car() {
+				let center2 = document.getElementsByClassName("center2")[2]
+				let li = center2.querySelectorAll("li")
+				for (let i = 0; i < li.length; i++) {
+					// if (li[0]==li[i]) {
+					// 	this.$router.push({
+					// 		path: "/shopcar"
+					// 	})
+					// }
+					
+				}
+			}
+		},
 		created() {
 			this.name = this.$store.state.name
 			this.Data = this.$store.state.Data

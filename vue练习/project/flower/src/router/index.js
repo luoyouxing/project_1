@@ -44,6 +44,12 @@ export default new Router({
 		meta:{
 			showFooter:true
 		}
+	},{
+		path:"/shopcar",
+		component:()=>import('../views/shopcar.vue'),
+		meta:{
+			showFooter:true
+		}
 	}],
 	mode: "history" //修改路由模式变history模式
 })

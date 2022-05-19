@@ -54,6 +54,7 @@
 	export default {
 		data() {
 			return {
+				arr:[],
 				showShare: false,
 				options: [
 					[{
@@ -100,6 +101,11 @@
 			},
 			btn(){
 				Toast.success('添加成功');
+				if(localStorage.getItem("shop")!=null){
+					this.arr = JSON.parse(localStorage.getItem("shop"))//把json字符串转换成对应的数组或对象
+				}
+				this.arr.push(this.$route.params.txt)
+				localStorage.setItem("shop", JSON.stringify(this.arr)) 
 			}
 		},
 		mounted() {
