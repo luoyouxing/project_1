@@ -1,67 +1,94 @@
 <template>
 	<div>
-		<div class="top">
-			<div class="top_1">
-				<span class="en">
-					<van-icon name="arrow-left" />女花亭花坊
-				</span>
-				<div class="top_2">
-					<ul>
-						<li></li>
-						<li></li>
-						<li></li>
-					</ul>
-					<div class="xian"></div>
-					<div class="yuan">
-						<div class="xy"></div>
+		<abc :title="$store.state.msg"></abc>
+		<div class="center">
+			<div class="center_1">
+				<van-search v-model="value" shape="round" placeholder="请输入商品关键字" />
+			</div>
+			<div class="center_2">
+				<ul class="daohang">
+					<li v-for="(v,i) in $store.state.arr" :key="i" @click="change(i)" :class="text==v.txt?'on':''">{{v.txt}}</li>
+				</ul>
+				<div class="gou" @scroll="top_box">
+					<div v-for="(v,i) in $store.state.arr" :key="i" class="gou_box">
+						<ul>
+							<li v-for="(o,n) in shop[i]" :key="n"><img :src="o.pic">
+								<div class="cent_1">
+									<div class="box1">
+										<span>{{o.name}}</span>
+										<span>{{o.num}}</span>
+									</div>
+									<div class="box2">
+										<span>{{o.pri}}</span>
+										<div class="a">
+											<span :class="o.car"></span>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
 					</div>
 				</div>
-			</div>
-			<van-search v-model="value" shape="round" placeholder="请输入商品关键字" />
-		</div>
-		<div class="center">
-			<ul class="daohang">
-				<li v-for="(v,i) in arr" :key="i">{{v.txt}}</li>
-			</ul>
-			<div class="gou">
-				<ul>
-					<li v-for="(v,i) in shop" :key="i"><img :src="v.pic">
-						<div class="center_1">
-							<div class="box1">
-								<span>{{v.name}}</span>
-								<span>{{v.num}}</span>
-							</div>
-							<div class="box2">
-								<span>{{v.pri}}</span>
-								<div class="a">
-									<span :class="v.car"></span>
-								</div>
-							</div>
-						</div>
-					</li>
-				</ul>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
+	import def from '../components/top.vue';
 	import Vue from 'vue';
 	import {
-		Icon
+		Icon,
+		Search,
 	} from 'vant';
 
 	Vue.use(Icon);
+	Vue.use(Search);
 	export default {
 		data() {
 			return {
+				top: [],
 				value: '',
+				text: "鲜花"
 			}
 		},
+		components: {
+			abc: def,
+		},
 		created() {
-			this.arr=this.$store.state.arr
-			this.shop=this.$store.state.shop
-		}
+			// this.arr = this.$store.state.arr
+			this.shop = this.$store.state.shop
+		},
+		mounted() {
+			this.top = []
+			let box = document.getElementsByClassName("gou_box")
+			for (let i = 0; i < box.length; i++) {
+				this.top.push(box[i].offsetTop)
+			}
+			console.log(this.top)
+		},
+		methods: {
+			change(i) {
+				// this.text = this.$store.state.arr[i].txt
+				let gou = document.getElementsByClassName("gou")[0]
+				gou.scrollTo({top: this.top[i],behavior: 'smooth'})
+				// console.log(this.top[i])
+			},
+			top_box(e){
+				// let _this=this
+				// this.top.map(function(v,i){
+				// 	if(e.target.scrollTop+20>=v){
+				// 		_this.text = _this.$store.state.arr[i].txt
+				// 	}
+				// })
+				this.top.map((v,i)=>{
+					if(e.target.scrollTop+20>=v){
+						this.text=this.$store.state.arr[i].txt
+					}
+				})
+			}
+		},
+
 	}
 </script>
 
@@ -82,9 +109,15 @@
 		width: 2rem;
 		background-color: #FFFFFF;
 		position: fixed;
-		top: 1.8rem;
+		top: 1.9rem;
 		bottom: 1rem;
 		overflow: scroll;
+		color: #aeaeae;
+	}
+
+	.on {
+		background-color: #f4f4f4;
+		color: #000000;
 	}
 
 	.daohang li {
@@ -97,10 +130,15 @@
 	}
 
 	.gou {
-		position: absolute;
+		position: fixed;
+		top: 1.9rem;
 		right: 0;
+		bottom: 1rem;
+		overflow: scroll;
 		width: 5.5rem;
 	}
+
+	.gou_box {}
 
 	.gou ul {
 		width: 5.1rem;
@@ -120,7 +158,7 @@
 		width: 2.1rem;
 	}
 
-	.center_1 {
+	.cent_1 {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-evenly;

@@ -37,6 +37,13 @@ export default new Router({
 		meta:{
 			showFooter:true
 		}
+	},{
+		path:"/detial",
+		name:"detial",
+		component:()=>import('../views/detial.vue'),
+		meta:{
+			showFooter:true
+		}
 	}],
 	mode: "history" //修改路由模式变history模式
 })

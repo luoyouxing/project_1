@@ -1,22 +1,7 @@
 <template>
 	<div>
-		<div class="top">
-			<div class="top_1">
-				<span @click="btn">
-					<van-icon name="arrow-left" />七夕推荐
-				</span>
-				<div class="top_2">
-					<ul>
-						<li></li>
-						<li></li>
-						<li></li>
-					</ul>
-					<div class="xian"></div>
-					<div class="yuan">
-						<div class="xy"></div>
-					</div>
-				</div>
-			</div>
+		<zxc :text="$route.params.text"></zxc>
+		<div class="top-1">
 			<van-search v-model="value" shape="round" placeholder="商品搜索:请输入商品关键字" />
 			<div class="paixu">
 				<ul>
@@ -24,10 +9,12 @@
 					</li>
 					<li>销量<div><span class="iconfont icon-102fangxiang_xiangxia"></span></div>
 					</li>
-					<li>价格<div><span class="iconfont icon-100fangxiang_xiangshang"></span><span class="iconfont icon-102fangxiang_xiangxia"></span>
+					<li>价格<div><span class="iconfont icon-100fangxiang_xiangshang"></span><span
+								class="iconfont icon-102fangxiang_xiangxia"></span>
 						</div>
 					</li>
-					<li>上新时间<div><span class="iconfont icon-100fangxiang_xiangshang"></span><span class="iconfont icon-102fangxiang_xiangxia"></span>
+					<li>上新时间<div><span class="iconfont icon-100fangxiang_xiangshang"></span><span
+								class="iconfont icon-102fangxiang_xiangxia"></span>
 						</div>
 					</li>
 				</ul>
@@ -55,24 +42,15 @@
 </template>
 
 <script>
-	import Vue from 'vue';
-	import {
-		Icon
-	} from 'vant';
-
-	Vue.use(Icon);
+	import asd from '../components/header.vue'
 	export default {
 		data() {
 			return {
 				value: '',
 			}
 		},
-		methods: {
-			btn() {
-				this.$router.push({
-					path: "/",
-				})
-			}
+		components: {
+			zxc: asd
 		},
 		created() {
 			this.ar = this.$store.state.ar
@@ -83,6 +61,11 @@
 <style scoped>
 	.top {
 		background-color: #FFFFFF;
+	}
+
+	.top-1 {
+		position: fixed;
+		top: 0.7rem;
 	}
 
 	.van-search {
@@ -100,25 +83,30 @@
 		justify-content: space-around;
 		align-items: center;
 	}
-	
-	.paixu li{
+
+	.paixu li {
 		height: 0.35rem;
 		display: flex;
 		align-items: center;
 	}
-	.paixu div{
+
+	.paixu div {
 		margin-left: 0.05rem;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 	}
-	.paixu div span{
+
+	.paixu div span {
 		font-size: 0.16rem;
 		color: #9f9f9f;
 	}
+
 	.center {
+		position: fixed;
+		overflow: scroll;
 		top: 2.5rem;
-		bottom:0
+		bottom: 0
 	}
 
 	.center ul {

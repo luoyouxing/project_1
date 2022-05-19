@@ -25,23 +25,23 @@
 				<ul class="size">
 					<li v-for="(v,i) in name" :key="i"><span>{{v.num}}</span><span>{{v.id}}</span></li>
 				</ul>
-				<div class="center_1">
-					<div class="center_2">
-						<div class="center_3"><span>订单</span>
+				<div class="center1">
+					<div class="center2">
+						<div class="center3"><span>订单</span>
 							<van-icon name="arrow" />
 						</div>
 						<ul>
 							<li v-for="v,i in data" :key="i"><img :src="v.pic">{{v.text}}</li>
 						</ul>
 					</div>
-					<div class="center_2">
-						<div class="center_3"><span>我的营销</span></div>
+					<div class="center2">
+						<div class="center3"><span>我的营销</span></div>
 						<ul>
 							<li v-for="v,i in data_1" :key="i"><img :src="v.pic">{{v.text}}</li>
 						</ul>
 					</div>
-					<div class="center_2">
-						<div class="center_3"><span>我的工具</span></div>
+					<div class="center2">
+						<div class="center3"><span>我的工具</span></div>
 						<ul style="width: 3.45rem;">
 							<li v-for="v,i in data_2" :key="i"><img :src="v.pic">{{v.text}}</li>
 						</ul>
@@ -129,12 +129,12 @@
 		font-size: 0.24rem;
 	}
 
-	.center_1 {
+	.center1 {
 		width: 7.1rem;
 		margin: auto;
 	}
 
-	.center_2 {
+	.center2 {
 		background-color: #FFFFFF;
 		height: 2rem;
 		display: flex;
@@ -145,7 +145,7 @@
 		margin-bottom: 0.3rem;
 	}
 
-	.center_3 {
+	.center3 {
 		font-size: 0.32rem;
 		display: flex;
 		flex-direction: row;
@@ -153,11 +153,11 @@
 		justify-content: space-between;
 	}
 
-	.center_3 span {
+	.center3 span {
 		padding-left: 0.2rem;
 	}
 
-	.center_1 ul {
+	.center1 ul {
 		font-size: 0.24rem;
 		list-style: none;
 		display: flex;
@@ -165,13 +165,13 @@
 		justify-content: space-around;
 	}
 
-	.center_1 li {
+	.center1 li {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
 
-	.center_1 img {
+	.center1 img {
 		width: 0.54rem;
 		height: 0.54rem;
 	}

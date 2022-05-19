@@ -1,43 +1,25 @@
 <template>
-	<div>
-		<router-view></router-view>
-		<ul class="bottom" v-if="!$route.meta.showFooter">
-			<!-- <li v-for="v,i in arr" :key="i">
-				<span :class="v.ref"></span>
-				<router-link :to="v.id">{{v.text}}</router-link>
-			</li> -->
-			<router-link v-for="v,i in arr" :key="i" :to="v.id">
-				<li @click="$store.state.msg=v.text" :class="$store.state.msg==v.text?'on':''"><span :class="v.ref"></span>{{v.text}}</li>
-			</router-link>
-		</ul>
+	<div class="top">
+		<div class="top_1">
+			<span>{{title}}</span>
+			<div class="top_2">
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<div class="xian"></div>
+				<div class="yuan">
+					<div class="xy"></div>
+				</div>
+			</div>
+		</div>
 	</div>
 </template>
 
 <script>
 	export default {
-		data() {
-			return {
-				// meg: "首页",
-				arr: [{
-					id: "/",
-					text: "首页",
-					ref: "iconfont icon-shouye",
-				}, {
-					id: "/classify",
-					text: "分类",
-					ref: "iconfont icon-fenlei",
-				}, {
-					id: "/gpdc",
-					text: "分销中心",
-					ref: "iconfont icon-021shoutidai",
-				}, {
-					id: "/mine",
-					text: "我的",
-					ref: "iconfont icon-31wode",
-				}]
-			}
-		},
-		methods: {}
+		props: ["title"],
 	}
 </script>
 
@@ -45,39 +27,6 @@
 	* {
 		margin: 0;
 		padding: 0;
-	}
-
-	.bottom {
-		width: 7.5rem;
-		height: 1rem;
-		font-size: 0.22rem;
-		display: flex;
-		flex-direction: row;
-		justify-content: space-around;
-		align-items: center;
-		position: fixed;
-		bottom: 0;
-		background-color: white;
-	}
-
-	.bottom li {
-		list-style: none;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-
-	.bottom li span {
-		font-size: 0.3rem;
-	}
-
-	.on {
-		color: #e37198;
-	}
-
-	a {
-		text-decoration: none;
-		color: inherit;
 	}
 
 	.top {

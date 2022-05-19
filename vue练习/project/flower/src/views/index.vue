@@ -1,67 +1,57 @@
 <template>
 	<div>
-		<div class="top">
-			<div class="top_1">
-				<span>女花亭花坊</span>
-				<div class="top_2">
-					<ul>
-						<li></li>
-						<li></li>
-						<li></li>
-					</ul>
-					<div class="xian"></div>
-					<div class="yuan">
-						<div class="xy"></div>
-					</div>
-				</div>
-			</div>
-			<van-search v-model="value" shape="round" placeholder="满天星" />
-		</div>
-
+		<abc :title="$store.state.msg"></abc>
 		<div class="center">
-			<van-swipe :autoplay="3000">
-				<van-swipe-item v-for="(image, index) in images" :key="index">
-					<img v-lazy="image.pic" />
-				</van-swipe-item>
-			</van-swipe>
-			<div class="tupian">
-				<ul>
-					<li v-for="(v,i) in img" :key="i" @click="change"><img :src="v.pic"><span>{{v.text}}</span></li>
-				</ul>
+			<div class="center_1">
+				<van-search v-model="value" shape="round" placeholder="满天星" />
 			</div>
-			<div class="huodong" @click="huodong"><img :src="require('../assets/index/10.jpg')">
-			</div>
-			<div class="quan">
-				<!-- <img :src="require('../assets/index/11.jpg')" @click="youhui(10)">
+			<div class="center_2">
+				<van-swipe :autoplay="3000">
+					<van-swipe-item v-for="(image, index) in images" :key="index">
+						<img v-lazy="image.pic" />
+					</van-swipe-item>
+				</van-swipe>
+				<div class="tupian">
+					<ul>
+						<li v-for="(v,i) in img" :key="i" @click="change(i)"><img :src="v.pic"><span>{{v.text}}</span>
+						</li>
+					</ul>
+				</div>
+				<div class="huodong" @click="huodong"><img :src="require('../assets/index/10.jpg')">
+				</div>
+				<div class="quan">
+					<!-- <img :src="require('../assets/index/11.jpg')" @click="youhui(10)">
 				<img :src="require('../assets/index/12.jpg')" @click="youhui(20)"> -->
-				<div v-for="(v,i) in $store.state.you" :key="i" @click="youhui(i)"><img :src="v.pic" ></div>
-			</div>
-			<div class="wenzi">
-				<p>热卖<span></span></p>
-			</div>
-			<div class="gouwu">
-				<ul>
-					<li v-for="(v,i) in ar" :key="i"><img :src="v.pic">
-						<div class="bottom_1">
-							<div class="jia">
-								<span class="a1">{{v.text}}</span>
-								<span class="a2">{{v.pirce}}</span>
-								<span class="a3">{{v.num}}</span>
-							</div>
-							<div id="en">
-								<div id="enn">
-									<span class="iconfont icon-gouwuche"></span>
+					<div v-for="(v,i) in $store.state.you" :key="i" @click="youhui(i)"><img :src="v.pic"></div>
+				</div>
+				<div class="wenzi">
+					<p>热卖<span></span></p>
+				</div>
+				<div class="gouwu">
+					<ul>
+						<li v-for="(v,i) in ar" :key="i" @click="add(i)"><img :src="v.pic">
+							<div class="bottom_1">
+								<div class="jia">
+									<span class="a1">{{v.text}}</span>
+									<span class="a2">{{v.pirce}}</span>
+									<span class="a3">{{v.num}}</span>
+								</div>
+								<div id="en">
+									<div id="enn">
+										<span class="iconfont icon-gouwuche"></span>
+									</div>
 								</div>
 							</div>
-						</div>
-					</li>
-				</ul>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
+	import def from '../components/top.vue';
 	import Vue from 'vue';
 	import {
 		Search,
@@ -77,28 +67,46 @@
 	export default {
 		data() {
 			return {
-				value: '',
+				// txt:"雨花亭花坊"
+				value: ""
 			}
 		},
+		components: {
+			abc: def,
+		},
 		methods: {
-			change() {
+			change(i) {
 				this.$router.push({
-					name: "liebiao"
+					name: "liebiao",
+					params: {
+						text: this.$store.state.img[i].text,
+					},
+				})
+				console.log(this.$store.state.img[i].text)
+			},
+			add(i){
+				this.$router.push({
+					name:"detial",
+					params:{
+						tx:this.$store.state.msg,
+						txt:this.$store.state.ar[i]
+					}
+				})
+				console.log(this.$store.state.ar[i].pic)
+			},
+			huodong() {
+				this.$router.push({
+					path: "/huodong"
 				})
 			},
-			huodong(){
-				this.$router.push({
-					path:"/huodong"
-				})
-			},
-			youhui(i){
+			youhui(i) {
 				console.log(this.$store.state.you[i].pri)
 				this.$router.push({
 					// name:"youhui",
-					path:"/youhui",
-					query:{
-						pri:this.$store.state.you[i].pri,
-						num:this.$store.state.you[i].num,
+					path: "/youhui",
+					query: {
+						pri: this.$store.state.you[i].pri,
+						num: this.$store.state.you[i].num,
 					}
 				})
 			}
@@ -113,47 +121,24 @@
 </script>
 
 <style>
-	.van-search {
-		background-color: #EEEEEE;
-		height: 1.2rem;
-	}
-
-	.van-search .van-cell {
-		height: 0.7rem;
-	}
-
-	.van-field__left-icon .van-icon {
-		font-size: 0.25rem;
-		line-height: 0.6rem;
-	}
-
-	.van-field__control[type=search] {
-		/* 属性选择器：只对包含有中括号里面的 */
-		font-size: 0.26rem;
-		line-height: 0.6rem;
-	}
-
-	.van-swipe {
-		height: 3rem;
-	}
-
-	.van-swipe-item img {
-		height: 3rem;
-		width: 7.5rem;
-	}
-
-	.van-swipe__indicator {
-		width: 0.1rem;
-		height: 0.1rem;
-	}
-
 	.center {
 		background-color: #EEEEEE;
 		width: 7.5rem;
+	}
+
+	.center_1 {
 		position: fixed;
-		top: 1.8rem;
+		top: 0.7rem;
+		width: 7.5rem;
+	}
+
+	.center_2 {
+		width: 7.5rem;
+		position: fixed;
+		top: 1.9rem;
 		bottom: 1rem;
 		overflow: scroll;
+		background-color: #EEEEEE;
 	}
 
 	.tupian ul {
