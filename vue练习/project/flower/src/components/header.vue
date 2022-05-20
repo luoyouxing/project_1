@@ -35,9 +35,7 @@
 		},
 		methods: {
 			btn() {
-				this.$router.push({
-					path: "/",
-				})
+				this.$router.go(-1)
 			}
 		},
 	}

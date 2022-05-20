@@ -69,16 +69,20 @@
 			}
 		},
 		methods: {
-			car() {
-				let center2 = document.getElementsByClassName("center2")[2]
-				let li = center2.querySelectorAll("li")
-				for (let i = 0; i < li.length; i++) {
-					// if (li[0]==li[i]) {
-					// 	this.$router.push({
-					// 		path: "/shopcar"
-					// 	})
-					// }
-					
+			car(i) {
+				// if(i==1){
+				// 	this.$router.push({
+				// 		path: "/shopcar"
+				// 	})
+				// }
+				if (this.$store.state.data_2[i].text == "购物车") {
+					this.$router.push({
+						path: "/shopcar",
+						name: "shopcar",
+						params:{
+							text: this.$store.state.data_2[i].text,
+						},
+					})
 				}
 			}
 		},

@@ -46,6 +46,7 @@ export default new Router({
 		}
 	},{
 		path:"/shopcar",
+		name:"shopcar",
 		component:()=>import('../views/shopcar.vue'),
 		meta:{
 			showFooter:true
