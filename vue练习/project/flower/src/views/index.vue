@@ -84,12 +84,12 @@
 				})
 				console.log(this.$store.state.img[i].text)
 			},
-			add(i){
+			add(i) {
 				this.$router.push({
-					name:"detial",
-					params:{
-						tx:this.$store.state.msg,
-						txt:this.$store.state.ar[i]
+					name: "detial",
+					params: {
+						tx: this.$store.state.msg,
+						txt: this.$store.state.ar[i]
 					}
 				})
 				console.log(this.$store.state.ar[i].pic)
@@ -123,27 +123,27 @@
 <style>
 	.center {
 		background-color: #EEEEEE;
-		width: 7.5rem;
+		width: 750px;
 	}
 
 	.center_1 {
 		position: fixed;
-		top: 0.7rem;
-		width: 7.5rem;
+		top: 70px;
+		width: 750px;
 	}
 
 	.center_2 {
-		width: 7.5rem;
+		width: 750px;
 		position: fixed;
-		top: 1.9rem;
-		bottom: 1rem;
+		top: 190px;
+		bottom: 100px;
 		overflow: scroll;
 		background-color: #EEEEEE;
 	}
 
 	.tupian ul {
-		width: 7.5rem;
-		height: 3.9rem;
+		width: 750px;
+		height: 390px;
 		display: flex;
 		flex-direction: column;
 		flex-wrap: wrap;
@@ -152,10 +152,10 @@
 	}
 
 	.tupian ul li {
-		width: 1.4rem;
-		height: 1.6rem;
+		width: 140px;
+		height: 160px;
 		list-style: none;
-		font-size: 0.28rem;
+		font-size: 28px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -163,13 +163,13 @@
 	}
 
 	.tupian ul li img {
-		height: 0.9rem;
-		width: 0.9rem;
+		height: 90px;
+		width:90px;
 	}
 
 	.huodong {
-		width: 7.5rem;
-		height: 2rem;
+		width: 750px;
+		height: 200px;
 	}
 
 	.huodong img {
@@ -178,8 +178,8 @@
 	}
 
 	.quan {
-		width: 7.5rem;
-		height: 2.9rem;
+		width: 750px;
+		height:290px;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
@@ -187,39 +187,39 @@
 	}
 
 	.quan img {
-		width: 3.5rem;
-		height: 2.15rem;
+		width: 350px;
+		height:215px;
 	}
 
 	.wenzi {
-		height: 0.65rem;
-		width: 7.5rem;
-		font-size: 0.36rem;
+		height: 65px;
+		width: 750px;
+		font-size: 36px;
 		display: flex;
 		justify-content: space-evenly;
 	}
 
 	.wenzi p {
-		width: 7.1rem;
+		width: 710px;
 		position: relative;
 		z-index: 1;
 	}
 
 	.wenzi p span {
-		width: 0.55rem;
-		height: 0.05rem;
-		border-radius: 0.5rem;
+		width: 55px;
+		height: 5px;
+		border-radius: 5px;
 		background-color: #e37198;
 		display: inline-block;
 		position: absolute;
-		bottom: 0.2rem;
-		left: 0.08rem;
+		bottom: 2px;
+		left: 8px;
 		z-index: -1;
 	}
 
 	.gouwu ul {
-		width: 7.5rem;
-		height: 10.5rem;
+		width: 750px;
+		height: 1050px;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
@@ -227,18 +227,18 @@
 	}
 
 	.gouwu ul li {
-		height: 5rem;
+		height: 500px;
 		list-style: none;
 		background-color: white;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		border-bottom-right-radius: 0.5rem;
+		border-bottom-right-radius: 50px;
 	}
 
 	.gouwu ul li img {
-		width: 3.45rem;
-		height: 3.74rem;
+		width: 345px;
+		height: 374px;
 	}
 
 	.bottom_1 {
@@ -249,41 +249,41 @@
 	}
 
 	.jia {
-		height: 1.1rem;
+		height: 110px;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
 	}
 
 	#en {
-		width: 0.7rem;
-		height: 0.5rem;
+		width: 70px;
+		height: 50px;
 	}
 
 	#en span {
-		font-size: 0.3rem;
+		font-size: 30px;
 		color: #e37198;
 	}
 
 	#enn {
-		width: 0.35rem;
-		height: 0.35rem;
-		border: 0.02rem solid #e37198;
-		border-radius: 0.5rem;
+		width: 35px;
+		height: 35px;
+		border: 2px solid #e37198;
+		border-radius: 50px;
 		display: flex;
 	}
 
 	.a1 {
-		font-size: 0.32rem;
+		font-size: 32px;
 	}
 
 	.a2 {
-		font-size: 0.28rem;
+		font-size: 28px;
 		color: #e37198;
 	}
 
 	.a3 {
-		font-size: 0.22rem;
+		font-size: 22px;
 		color: #999999;
 	}
 </style>

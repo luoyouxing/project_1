@@ -65,7 +65,7 @@
 
 	.top-1 {
 		position: fixed;
-		top: 0.7rem;
+		top: 70px;
 	}
 
 	.van-search {
@@ -74,9 +74,9 @@
 
 	.paixu ul {
 		list-style: none;
-		width: 7.5rem;
-		height: 0.7rem;
-		font-size: 0.3rem;
+		width: 750px;
+		height: 70px;
+		font-size: 30px;
 		/* line-height: 0.7rem; */
 		display: flex;
 		flex-wrap: nowrap;
@@ -85,33 +85,33 @@
 	}
 
 	.paixu li {
-		height: 0.35rem;
+		height: 35px;
 		display: flex;
 		align-items: center;
 	}
 
 	.paixu div {
-		margin-left: 0.05rem;
+		margin-left: 5px;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 	}
 
 	.paixu div span {
-		font-size: 0.16rem;
+		font-size: 16px;
 		color: #9f9f9f;
 	}
 
 	.center {
 		position: fixed;
 		overflow: scroll;
-		top: 2.5rem;
-		bottom: 0
+		top: 250px;
+		bottom: 0;
 	}
 
 	.center ul {
-		width: 7.5rem;
-		height: 10.5rem;
+		width: 750px;
+		height: 1050px;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
@@ -119,18 +119,18 @@
 	}
 
 	.center ul li {
-		height: 5rem;
+		height: 500px;
 		list-style: none;
 		background-color: white;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		border-bottom-right-radius: 0.5rem;
+		border-bottom-right-radius: 50px;
 	}
 
 	.center ul li img {
-		width: 3.45rem;
-		height: 3.74rem;
+		width: 345px;
+		height: 374px;
 	}
 
 	.bottom_1 {
@@ -141,41 +141,41 @@
 	}
 
 	.jia {
-		height: 1.1rem;
+		height: 110px;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
 	}
 
 	#en {
-		width: 0.7rem;
-		height: 0.5rem;
+		width: 70px;
+		height: 50px;
 	}
 
 	#en span {
-		font-size: 0.3rem;
+		font-size: 30px;
 		color: #e37198;
 	}
 
 	#enn {
-		width: 0.35rem;
-		height: 0.35rem;
-		border: 0.02rem solid #e37198;
-		border-radius: 0.5rem;
+		width: 35px;
+		height: 35px;
+		border: 2px solid #e37198;
+		border-radius: 50px;
 		display: flex;
 	}
 
 	.a1 {
-		font-size: 0.32rem;
+		font-size: 32px;
 	}
 
 	.a2 {
-		font-size: 0.28rem;
+		font-size: 28px;
 		color: #e37198;
 	}
 
 	.a3 {
-		font-size: 0.22rem;
+		font-size: 22px;
 		color: #999999;
 	}
 </style>

@@ -35,15 +35,15 @@
 	}
 	.top {
 		background-color: #EEEEEE;
-		width: 7.5rem;
+		width: 750px;
 		position: fixed;
 	}
 	
 	.top_1 {
-		font-size: 0.34rem;
+		font-size: 34px;
 		color: #333333;
-		width: 7.1rem;
-		height: 0.7rem;
+		width: 710px;
+		height: 70px;
 		margin: auto;
 		display: flex;
 		flex-direction: row;
@@ -52,10 +52,10 @@
 	}
 	
 	.top_2 {
-		width: 1.6rem;
-		height: 0.58rem;
-		border-radius: 0.4rem;
-		border: 0.01rem solid #333333;
+		width: 160px;
+		height: 58px;
+		border-radius: 40px;
+		border: 1px solid #333333;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-evenly;
@@ -64,7 +64,7 @@
 	
 	.top_2 ul {
 		list-style: none;
-		width: 0.4rem;
+		width: 40px;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
@@ -73,72 +73,72 @@
 	
 	.top_2 li:first-child,
 	.top_2 li:last-child {
-		width: 0.07rem;
-		height: 0.07rem;
-		border-radius: 0.5rem;
+		width: 7px;
+		height: 7px;
+		border-radius:50px;
 		background-color: #333333;
 	}
 	
 	.top_2 li:nth-child(2) {
-		width: 0.12rem;
-		height: 0.12rem;
-		border-radius: 0.5rem;
+		width: 12px;
+		height: 12px;
+		border-radius: 50px;
 		background-color: #333333;
 	}
 	
 	.xian {
-		height: 0.4rem;
-		width: 0.02rem;
+		height: 40px;
+		width: 2px;
 		background-color: #d0d0d0;
 	}
 	
 	.yuan {
-		width: 0.24rem;
-		height: 0.24rem;
-		border-radius: 0.5rem;
-		border: 0.03rem solid #333333;
+		width: 24px;
+		height: 24px;
+		border-radius: 50px;
+		border: 3px solid #333333;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 	}
 	
 	.xy {
-		width: 0.15rem;
-		height: 0.15rem;
-		border-radius: 0.5rem;
+		width: 15px;
+		height: 15px;
+		border-radius: 50px;
 		background-color: #333333;
 	}
 	.van-search {
 		background-color: #EEEEEE;
-		height: 1.2rem;
+		height: 120px;
 	}
 	
 	.van-search .van-cell {
-		height: 0.7rem;
+		height: 70px;
 	}
 	
 	.van-field__left-icon .van-icon {
-		font-size: 0.25rem;
-		line-height: 0.6rem;
+		font-size: 25px;
+		line-height: 60px;
 	}
 	
 	.van-field__control[type=search] {
 		/* 属性选择器：只对包含有中括号里面的 */
-		font-size: 0.26rem;
-		line-height: 0.6rem;
+		font-size: 26px;
+		line-height: 60px;
 	}
 	
 	.van-swipe {
-		height: 3rem;
+		height: 300px;
 	}
 	
 	.van-swipe-item img {
-		height: 3rem;
-		width: 7.5rem;
+		height: 300px;
+		width: 750px;
 	}
 	
 	.van-swipe__indicator {
-		width: 0.1rem;
-		height: 0.1rem;
+		width: 10px;
+		height: 10px;
 	}
 </style>

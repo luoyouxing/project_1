@@ -48,9 +48,9 @@
 	}
 
 	.bottom {
-		width: 7.5rem;
-		height: 1rem;
-		font-size: 0.22rem;
+		width: 750px;
+		height: 100px;
+		font-size: 22px;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
@@ -68,7 +68,7 @@
 	}
 
 	.bottom li span {
-		font-size: 0.3rem;
+		font-size: 30px;
 	}
 
 	.on {
@@ -82,14 +82,14 @@
 
 	.top {
 		background-color: #EEEEEE;
-		width: 7.5rem;
+		width: 750px;
 		/* position: fixed; */
 	}
 
 	.top_1 {
-		font-size: 0.34rem;
+		font-size: 34px;
 		color: #333333;
-		width: 7.1rem;
+		width: 710px;
 		margin: auto;
 		display: flex;
 		flex-direction: row;
@@ -98,10 +98,10 @@
 	}
 
 	.top_2 {
-		width: 1.6rem;
-		height: 0.58rem;
-		border-radius: 0.4rem;
-		border: 0.01rem solid #333333;
+		width: 160px;
+		height:58px;
+		border-radius: 40px;
+		border: 1px solid #333333;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-evenly;
@@ -110,7 +110,7 @@
 
 	.top_2 ul {
 		list-style: none;
-		width: 0.4rem;
+		width: 40px;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
@@ -119,39 +119,39 @@
 
 	.top_2 li:first-child,
 	.top_2 li:last-child {
-		width: 0.07rem;
-		height: 0.07rem;
-		border-radius: 0.5rem;
+		width: 7px;
+		height: 7px;
+		border-radius: 50px;
 		background-color: #333333;
 	}
 
 	.top_2 li:nth-child(2) {
-		width: 0.12rem;
-		height: 0.12rem;
-		border-radius: 0.5rem;
+		width: 12px;
+		height: 12px;
+		border-radius:5px;
 		background-color: #333333;
 	}
 
 	.xian {
-		height: 0.4rem;
-		width: 0.02rem;
+		height:40px;
+		width: 2px;
 		background-color: #d0d0d0;
 	}
 
 	.yuan {
-		width: 0.24rem;
-		height: 0.24rem;
-		border-radius: 0.5rem;
-		border: 0.03rem solid #333333;
+		width: 24px;
+		height: 24px;
+		border-radius: 50px;
+		border:3px solid #333333;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 	}
 
 	.xy {
-		width: 0.15rem;
-		height: 0.15rem;
-		border-radius: 0.5rem;
+		width: 15px;
+		height:15px;
+		border-radius: 50px;
 		background-color: #333333;
 	}
 </style>

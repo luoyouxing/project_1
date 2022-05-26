@@ -44,20 +44,20 @@
 
 <style scoped>
 	.cen {
-		width: 7.5rem;
+		width: 750px;
 		position: absolute;
-		top: 0.62rem;
-		bottom: 0rem;
+		top: 62px;
+		bottom: 0;
 		background-color: #EEEEEE;
 		background-image: url(../assets/index/1.png);
-		background-size: 5.5rem 5.5rem;
+		background-size: 550px 550px;
 		background-repeat: no-repeat;
 		/* background-attachment: fixed; */
 		background-position: center;
 	}
 
 	.cen span {
-		font-size: 0.4rem;
+		font-size: 40px;
 		position: absolute;
 		top: 80%;
 		left: 30%;

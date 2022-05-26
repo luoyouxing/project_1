@@ -17,9 +17,9 @@
 					</div>
 				</div>
 			</div>
-			<div>
-				
-			</div>
+		</div>
+		<div class="tips">
+
 		</div>
 	</div>
 </template>
@@ -29,12 +29,18 @@
 	import {
 		Icon
 	} from 'vant';
-	
+
 	Vue.use(Icon);
-	export default {
-	}
+	export default {}
 </script>
 
 <style scoped>
-	
+	.tips {
+		width: 750px;
+		position: absolute;
+		top: 70px;
+		bottom: 100px;
+		overflow: scroll;
+		background-color: #EEEEEE;
+	}
 </style>

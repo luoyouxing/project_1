@@ -31,7 +31,7 @@
 							<van-icon name="arrow" />
 						</div>
 						<ul>
-							<li v-for="v,i in data" :key="i"><img :src="v.pic">{{v.text}}</li>
+							<li v-for="v,i in data" :key="i" @click="order(i)"><img :src="v.pic">{{v.text}}</li>
 						</ul>
 					</div>
 					<div class="center2">
@@ -42,7 +42,7 @@
 					</div>
 					<div class="center2">
 						<div class="center3"><span>我的工具</span></div>
-						<ul style="width: 3.45rem;">
+						<ul class="gw">
 							<li v-for="v,i in data_2" :key="i" @click="car(i)"><img :src="v.pic">{{v.text}}</li>
 						</ul>
 					</div>
@@ -69,17 +69,17 @@
 			}
 		},
 		methods: {
+			order(i) {
+				if(this.$store.state.data[i].text=="待付款"){
+					console.log(1)
+				}
+			},
 			car(i) {
-				// if(i==1){
-				// 	this.$router.push({
-				// 		path: "/shopcar"
-				// 	})
-				// }
 				if (this.$store.state.data_2[i].text == "购物车") {
 					this.$router.push({
 						path: "/shopcar",
 						name: "shopcar",
-						params:{
+						params: {
 							text: this.$store.state.data_2[i].text,
 						},
 					})
@@ -103,9 +103,9 @@
 	}
 
 	.top1 {
-		width: 7.5rem;
+		width: 750px;
 		position: fixed;
-		bottom: 1rem;
+		bottom: 100px;
 		top: 0;
 		overflow: scroll;
 		background-color: #eeeeee;
@@ -116,8 +116,8 @@
 	}
 
 	.tou {
-		height: 1.85rem;
-		font-size: 0.32rem;
+		height: 185px;
+		font-size: 32px;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-evenly;
@@ -125,12 +125,12 @@
 	}
 
 	.tou img {
-		width: 1.35rem;
-		height: 1.35rem;
+		width: 135px;
+		height: 135px;
 	}
 
 	.size {
-		height: 1.65rem;
+		height: 165px;
 		list-style: none;
 		display: flex;
 		flex-direction: row;
@@ -145,31 +145,31 @@
 	}
 
 	.size span:first-child {
-		font-size: 0.3rem;
+		font-size: 30px;
 	}
 
 	.size span:nth-child(2) {
-		font-size: 0.24rem;
+		font-size: 24px;
 	}
 
 	.center1 {
-		width: 7.1rem;
+		width: 710px;
 		margin: auto;
 	}
 
 	.center2 {
 		background-color: #FFFFFF;
-		height: 2rem;
+		height: 200px;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
-		border-top-left-radius: 0.2rem;
-		border-bottom-right-radius: 0.2rem;
-		margin-bottom: 0.3rem;
+		border-top-left-radius: 20px;
+		border-bottom-right-radius: 20px;
+		margin-bottom: 30px;
 	}
 
 	.center3 {
-		font-size: 0.32rem;
+		font-size: 32px;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
@@ -177,11 +177,15 @@
 	}
 
 	.center3 span {
-		padding-left: 0.2rem;
+		padding-left: 20px;
+	}
+
+	.gw {
+		width: 345px;
 	}
 
 	.center1 ul {
-		font-size: 0.24rem;
+		font-size: 24px;
 		list-style: none;
 		display: flex;
 		flex-direction: row;
@@ -195,31 +199,31 @@
 	}
 
 	.center1 img {
-		width: 0.54rem;
-		height: 0.54rem;
+		width: 54px;
+		height: 54px;
 	}
 
 	.van-icon {
-		width: 0.8rem;
+		width: 80px;
 	}
 
 	.xiao {
-		width: 7.1rem;
-		height: 0.9rem;
+		width: 710px;
+		height: 90px;
 		margin: auto;
-		font-size: 0.32rem;
+		font-size: 32px;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
 		background-color: #ffffff;
-		border-top-left-radius: 0.2rem;
-		border-bottom-right-radius: 0.2rem;
+		border-top-left-radius: 20px;
+		border-bottom-right-radius: 20px;
 	}
 
 	.bg {
 		background-image: url(../assets/mine/1-1.jpg);
 		background-repeat: no-repeat;
-		background-size: 7.5rem 4.5rem;
+		background-size: 750px 450px;
 	}
 </style>

@@ -22,7 +22,7 @@
 			<div class="cen_1">
 				<div class="cen_2">
 					<span>{{$route.query.num}}<span>元</span></span>
-					<button type="button">点击领取</button>
+					<button type="button" @click="receive" class="">点击领取</button>
 				</div>
 				<div class="cen_3">
 					<div class="cen_4">
@@ -47,14 +47,34 @@
 
 	Vue.use(Icon);
 	export default {
-		mounted(){
-			console.log(this.$route.query)
+		data(){
+			return{
+				number:[]
+			}
+		},
+		mounted() {
+			// console.log(this.$route.query)
 		},
 		methods: {
 			btn() {
-				this.$router.push({
-					path: "/",
-				})
+				this.$router.go(-1)
+			},
+			receive() {
+				let cen_2 = document.getElementsByClassName("cen_2")[0]
+				let receive = cen_2.getElementsByTagName("button")[0]
+				receive.innerText = "已领取"
+				receive.className = "button"
+				if (localStorage.getItem("num") != null) {
+					this.number = JSON.parse(localStorage.getItem("num")) //把json字符串转换成对应的数组或对象
+				}
+				this.number.push(this.$route.query)
+				// localStorage.setItem("num",JSON.stringify(this.number))
+				// var res=this.number.findIndex((v,i)=>{
+				// 	console.log(v)
+				// 	return v.num==this.number[i].num
+				// })
+				// console.log(res)
+				
 			}
 		}
 	}
@@ -63,16 +83,17 @@
 <style scoped>
 	.top {
 		background-color: #FFFFFF;
+		z-index: 999;
 	}
 
 	.cen {
-		width: 7.5rem;
+		width: 750px;
 		background-color: #eeeeee;
 		position: absolute;
-		top: 0.62rem;
-		bottom: 0rem;
+		top: 62px;
+		bottom: 0;
 		background-image: url(../assets/index/2.png);
-		background-size: 7.1rem 98%;
+		background-size: 710px 98%;
 		background-repeat: no-repeat;
 		/* background-attachment: fixed; */
 		background-position: center;
@@ -87,34 +108,38 @@
 	} */
 
 	.cen_2 {
-		height: 3.8rem;
+		height: 380px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 	}
-	
-	.cen_2 span{
-		font-size: 2rem;
+
+	.cen_2 span {
+		font-size: 200px;
 		color: #e37198;
 	}
-	
-	.cen_2 span span{
-		font-size: 0.5rem;
+
+	.cen_2 span span {
+		font-size: 50px;
 	}
-	
-	.cen_2 button{
-		height: 0.8rem;
-		width: 3rem;
+
+	.cen_2 button {
+		height: 80px;
+		width: 300px;
 		border: none;
-		font-size: 0.45rem;
+		font-size: 45px;
 		color: #FFFFFF;
-		border-radius: 0.5rem;
+		border-radius: 50px;
 		background-color: #E37198;
 	}
 
+	.cen_2 button.button {
+		background-color: #AEAEAE;
+	}
+
 	.cen_3 {
-		height: 3.1rem;
+		height: 310px;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-evenly;
@@ -127,11 +152,11 @@
 	}
 
 	.cen_4 span:first-child {
-		font-size: 0.34rem;
+		font-size: 34px;
 		color: #e37198;
 	}
 
 	.cen_4 span:last-child {
-		font-size: 0.3rem;
+		font-size: 30px;
 	}
 </style>

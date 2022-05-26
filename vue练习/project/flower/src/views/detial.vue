@@ -54,7 +54,7 @@
 	export default {
 		data() {
 			return {
-				arr:[],
+				arr: [],
 				showShare: false,
 				options: [
 					[{
@@ -99,17 +99,38 @@
 				Toast(option.name);
 				this.showShare = false;
 			},
-			btn(){
-				Toast.success('添加成功');
-				if(localStorage.getItem("shop")!=null){
-					this.arr = JSON.parse(localStorage.getItem("shop"))//把json字符串转换成对应的数组或对象
+			btn() {
+				let obj = {
+					number:1,
+					num: this.$route.params.txt.num,
+					pic: this.$route.params.txt.pic,
+					text: this.$route.params.txt.text,
+					pirce: this.$route.params.txt.pirce,
 				}
-				this.arr.push(this.$route.params.txt)
-				localStorage.setItem("shop", JSON.stringify(this.arr)) 
+				if (localStorage.getItem("shop") != null) {
+					this.arr = JSON.parse(localStorage.getItem("shop")) //把json字符串转换成对应的数组或对象
+				}
+				var bool = this.arr.some(function(v) {
+					console.log(v)
+					return v.pic == obj.pic
+				})
+				
+				if (bool) {
+					var res = this.arr.findIndex(function(n) {
+						return n.pic == obj.pic
+					})
+					this.arr[res].number++
+				} else {
+					this.arr.push(obj)
+				}
+				console.log(this.arr)
+				// this.arr.push(obj)
+				localStorage.setItem("shop", JSON.stringify(this.arr))
+				Toast.success('添加成功');
 			}
 		},
 		mounted() {
-			console.log(this.$route.params)
+			// console.log(this.$route.params)
 		},
 		components: {
 			zxc: asd
@@ -123,37 +144,37 @@
 	}
 
 	.pic {
-		width: 7.5rem;
+		width: 750px;
 		text-align: center;
 		position: fixed;
-		top: 0.8rem;
+		top: 80px;
 		overflow: scroll;
 		bottom: 0;
 	}
 
 	.pic img {
-		width: 6rem;
-		height: 6.6rem;
+		width: 600px;
+		height: 660px;
 	}
 
 	.det {
 		margin: auto;
-		width: 7rem;
-		height: 1.5rem;
+		width: 700px;
+		height: 150px;
 		display: flex;
 		flex-direction: column;
-		font-size: 0.28rem;
+		font-size: 28px;
 		justify-content: space-around;
-		border-bottom: 0.05rem solid #f2f1ed;
+		border-bottom: 5px solid #f2f1ed;
 	}
 
 	.det span:nth-child(2) {
-		font-size: 0.2rem;
+		font-size: 2px;
 	}
 
 	.van-cell {
-		width: 1.5rem;
-		font-size: 0.28rem;
+		width: 150px;
+		font-size: 28px;
 	}
 
 	.det_1 {
@@ -168,7 +189,7 @@
 	}
 
 	.van-popup--bottom {
-		width: 7.5rem;
+		width: 750px;
 	}
 
 	.van-share-sheet__options {
@@ -177,7 +198,7 @@
 	}
 
 	.det-1 {
-		width: 7rem;
+		width: 700px;
 		margin: auto;
 		display: flex;
 		flex-direction: row;
@@ -186,19 +207,19 @@
 	}
 
 	.det_3 {
-		width: 7rem;
-		height: 2rem;
+		width: 700px;
+		height: 200px;
 		margin: auto;
-		font-size: 0.26rem;
+		font-size: 26pxm;
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
 		justify-content: space-evenly;
-		border-bottom: 0.05rem solid #f2f1ed;
+		border-bottom: 5px solid #f2f1ed;
 	}
 
 	.card {
-		width: 7rem;
+		width: 700px;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
@@ -208,22 +229,22 @@
 
 	.card span:nth-child(2) {
 		display: inline-block;
-		width: 0.3rem;
-		height: 0.3rem;
-		line-height: 0.3rem;
+		width: 30px;
+		height: 30px;
+		line-height: 30px;
 		background-color: #ffac28;
 		color: #ffffff;
-		font-size: 0.24rem;
+		font-size: 24px;
 	}
 
 	.card span:last-child {
-		width: 5.9rem;
-		font-size: 0.22rem;
+		width: 590px;
+		font-size: 22px;
 		text-align: left;
 	}
 
 	.order {
-		width: 7rem;
+		width: 700px;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
@@ -233,36 +254,36 @@
 
 	.order span:nth-child(2) {
 		display: inline-block;
-		width: 1rem;
-		height: 0.28rem;
-		border: 0.01rem solid #000000;
-		line-height: 0.3rem;
-		font-size: 0.24rem;
+		width: 100px;
+		height: 28px;
+		border: 1px solid #000000;
+		line-height: 30px;
+		font-size: 24px;
 	}
 
 	.order span:last-child {
-		width: 5rem;
-		font-size: 0.22rem;
+		width: 500px;
+		font-size: 22px;
 		text-align: left;
 	}
 
 	.shop {
-		width: 7rem;
-		height: 1rem;
+		width: 700px;
+		height: 100px;
 		display: flex;
 		margin: auto;
 		flex-direction: column;
 		align-items: flex-start;
 		justify-content: space-between;
-		border-bottom: 0.05rem solid #f2f1ed;
+		border-bottom: 5px solid #f2f1ed;
 	}
 
 	.shop span:first-child {
-		font-size: 0.32rem;
+		font-size: 32px;
 	}
 
 	.shop span:last-child {
-		font-size: 0.24rem;
+		font-size: 24px;
 		opacity: 0.8;
 	}
 </style>

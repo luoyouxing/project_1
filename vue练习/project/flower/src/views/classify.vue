@@ -7,7 +7,8 @@
 			</div>
 			<div class="center_2">
 				<ul class="daohang">
-					<li v-for="(v,i) in $store.state.arr" :key="i" @click="change(i)" :class="text==v.txt?'on':''">{{v.txt}}</li>
+					<li v-for="(v,i) in $store.state.arr" :key="i" @click="change(i)" :class="text==v.txt?'on':''">
+						{{v.txt}}</li>
 				</ul>
 				<div class="gou" @scroll="top_box">
 					<div v-for="(v,i) in $store.state.arr" :key="i" class="gou_box">
@@ -71,19 +72,22 @@
 			change(i) {
 				// this.text = this.$store.state.arr[i].txt
 				let gou = document.getElementsByClassName("gou")[0]
-				gou.scrollTo({top: this.top[i],behavior: 'smooth'})
+				gou.scrollTo({
+					top: this.top[i],
+					behavior: 'smooth'
+				})
 				// console.log(this.top[i])
 			},
-			top_box(e){
+			top_box(e) {
 				// let _this=this
 				// this.top.map(function(v,i){
 				// 	if(e.target.scrollTop+20>=v){
 				// 		_this.text = _this.$store.state.arr[i].txt
 				// 	}
 				// })
-				this.top.map((v,i)=>{
-					if(e.target.scrollTop+20>=v){
-						this.text=this.$store.state.arr[i].txt
+				this.top.map((v, i) => {
+					if (e.target.scrollTop + 20 >= v) {
+						this.text = this.$store.state.arr[i].txt
 					}
 				})
 			}
@@ -102,15 +106,15 @@
 	}
 
 	.en .van-icon {
-		right: 0.1rem;
+		right: 10px;
 	}
 
 	.daohang {
-		width: 2rem;
+		width: 200px;
 		background-color: #FFFFFF;
 		position: fixed;
-		top: 1.9rem;
-		bottom: 1rem;
+		top: 190px;
+		bottom: 100px;
 		overflow: scroll;
 		color: #aeaeae;
 	}
@@ -121,41 +125,41 @@
 	}
 
 	.daohang li {
-		width: 2rem;
-		height: 0.9rem;
-		font-size: 0.34rem;
-		line-height: 0.9rem;
+		width: 200px;
+		height: 90px;
+		font-size: 34px;
+		line-height: 90px;
 		text-align: center;
 		list-style: none;
 	}
 
 	.gou {
 		position: fixed;
-		top: 1.9rem;
+		top: 190px;
 		right: 0;
-		bottom: 1rem;
+		bottom: 100px;
 		overflow: scroll;
-		width: 5.5rem;
+		width: 550px;
 	}
 
 	.gou_box {}
 
 	.gou ul {
-		width: 5.1rem;
+		width: 510px;
 		margin: auto;
 	}
 
 	.gou li {
-		width: 5.1rem;
-		height: 2rem;
-		margin: 0.2rem 0;
+		width: 510px;
+		height: 200px;
+		margin: 20px 0;
 		background-color: #FFFFFF;
 		display: flex;
 	}
 
 	.gou img {
-		height: 2rem;
-		width: 2.1rem;
+		height: 200px;
+		width: 210px;
 	}
 
 	.cent_1 {
@@ -165,21 +169,21 @@
 	}
 
 	.box1:first-child {
-		font-size: 0.24rem;
-		height: 1.1rem;
-		width: 3rem;
+		font-size: 24px;
+		height: 110px;
+		width: 300px;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-evenly;
 	}
 
 	.box1 span:nth-child(2) {
-		font-size: 0.2rem;
-		margin-left: 0.1rem;
+		font-size: 20px;
+		margin-left: 10px;
 	}
 
 	.box2 {
-		font-size: 0.32rem;
+		font-size: 32px;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
@@ -188,19 +192,19 @@
 	}
 
 	.a {
-		width: 0.45rem;
-		height: 0.35rem;
+		width: 45px;
+		height: 35px;
 	}
 
 	.a span {
-		width: 0.35rem;
-		height: 0.35rem;
-		border: 0.02rem solid #e37198;
-		border-radius: 0.5rem;
+		width: 35px;
+		height: 35px;
+		border: 2px solid #e37198;
+		border-radius: 50px;
 	}
 
 	.box2 .iconfont {
-		font-size: 0.3rem;
+		font-size: 30px;
 		color: #e37198;
 	}
 </style>
