@@ -27,7 +27,7 @@
 				</ul>
 				<div class="center1">
 					<div class="center2">
-						<div class="center3"><span>订单</span>
+						<div class="center3" @click="total" ref="dingdan"><span>订单</span>
 							<van-icon name="arrow" />
 						</div>
 						<ul>
@@ -69,10 +69,20 @@
 			}
 		},
 		methods: {
+			total() {
+				this.$router.push({
+					path: "/order"
+				})
+				// console.log(this.$refs.dingdan.childNodes[0].innerText)
+			},
 			order(i) {
-				if(this.$store.state.data[i].text=="待付款"){
-					console.log(1)
-				}
+				this.$router.push({
+					// path: "/order",
+					name:"order",
+					params: {
+						active: i + 1
+					}
+				})
 			},
 			car(i) {
 				if (this.$store.state.data_2[i].text == "购物车") {
@@ -82,6 +92,10 @@
 						params: {
 							text: this.$store.state.data_2[i].text,
 						},
+					})
+				}else{
+					this.$router.push({
+						path:"/address"
 					})
 				}
 			}

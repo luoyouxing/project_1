@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div>
+			node_modules文件夹：项目依赖文件夹
+
+			public文件夹：一般放置静态资源，注意，放在public文件夹中的静态资源，webpack进行打包的时候，会原封不动的打包到dist文件夹中。
+
+			src文件夹（程序员源代码文件夹）：
+			assets文件夹：一般放置静态资源（一般放置多个组件公用的静态资源），需注意，放置在assets文件夹里面的静态资源，在webpack打包时，webpack会把静态资源当做一个模块，打包在js文件中。
+
+			component文件夹：一般放置的是非路由组件（全局组件）
+
+			App.vue：唯一的根组件，vue中的组件（.vue）
+
+			main.js：程序的入口文件，也是整个文件中最先执行的文件
+
+			babel.config.js：配置文件（babel相关）
+			package.json文件：认为项目“身份证”，记录项目叫什么，项目中由哪些依赖，项目怎么运行
+			package-lock.json：缓存性文件
+			README.md：说明性文件
+		</div>
+		<div>
+			运行代码，让文件自动打开
+			---package.json
+			"scripts": {
+			"serve": "vue-cli-service serve --open",
+			"build": "vue-cli-service build",
+			"lint": "vue-cli-service lint"
+			},
+			
+			eslint校验功能关闭
+			---在根目录下，创建一个vue.config.js文件
+			比如：声明变量但是没有使用eslint校验工具报错
+			
+			src文件夹简写方法，配置别名@
+			jsconfig.json配置别名@提示[代表src文件夹，将来文件过多，也可以找到]
+			{
+				"compilerOptions":{
+					"baseUrl":"./",
+					"paths":{
+						"@/":["src/*"]
+					}
+				},
+				"exclude":["node_modules","dist"]
+			}
+		</div>
+		<div>
+			项目路由分析
+			vue-router
+			前端所谓路由：kv键值对。
+			key：url（地址栏中的路径）
+			value:相应的路由组件
+			
+			路由组件：
+			home首页路由组件，search组件路由，login登录路由，register注册路由
+			非路由组件：
+			Header【首页，搜索页】
+			Footer【在首页，搜索页】，但是在登录页面是没有
+			
+			采用less样式，浏览器不能识别，通过安装less less-loader@5 进行处理 把less样式变为css样式，浏览器才能识别
+			让组件识别less样式，需要在style上加上lang=less
+			
+			使用组件
+			
+			路由搭建
+			vue-router
+			component文件夹：放置的非路由组件（共用全局组件）
+			page|views文件夹：经常放置路由组件
+			路由组件与非路由组建的区别，
+				1.路由组件放入page|views文件夹，非路由组件放入component文件夹
+				2.路由组件一般需要在router文件夹中注册，非路由组件一般以标签的形式使用
+				3.注册完路由，不管路由组件还是非路由组件都带有$route和$router属性
+				$route:获取路由信息【路径，query，params等】
+				$router:一般进行编程式导航进行路由跳转（push|replace）
+			
+			路由的跳转
+			声明式导航router-link，可以进行路由跳转
+			编程式导航push|replace，可以进行路由跳转
+			
+			编程式导航：编程式导航能做的，编程式导航都能做
+			但是除了进行路由跳转，还可以做一些其他的业务逻辑
+		</div>
+		<div>
+			Footer组件显示隐藏
+			v-if v-show
+			在home，search显示footer组件
+			在登录，注册时候隐藏
+		</div>
+	</body>
+</html>

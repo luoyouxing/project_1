@@ -522,6 +522,33 @@ export default new Vuex.Store({
 			pri: 199,
 			num: 20
 		}],
+		goods: [{
+			goodsid: 60293425243633,
+			goodsname: "绣花香 128",
+			goodsnum: "销量：22",
+			goodsprice: "￥149",
+			goodspic: require("../assets/index/13.jpg"),
+			goodsdetails: "已完成",
+			goodstext: "查看订单",
+		}, {
+			goodsid: 60293425243633,
+			goodsname: "遇见时光遇见你",
+			goodsnum: "销量：99",
+			goodsprice: "￥198.00",
+			goodspic: require("../assets/index/14.jpg"),
+			goodsdetails: "待支付",
+			goodstext: "去支付",
+
+		}, {
+			goodsid: 60293425243633,
+			goodsname: "芬芳",
+			goodsnum: "销量：66",
+			goodsprice: "￥326.00",
+			goodspic: require("../assets/index/15.jpg"),
+			goodsdetails: "已发货",
+			goodstext: "查看物流",
+		}, ],
+		// address: [],
 		msg: "首页"
 	},
 	getters: {
